@@ -9,11 +9,11 @@
 #include <LiquidCrystal_I2C.h>
 #include <string.h>
 #include <stdio.h>
+#include "cosntants.h"
 
 /**
  * @brief Enum representing different system states.
  */
-enum State {IDLE = 0, ENTERING_PASSWORD = 1, ACCESS_DENIED = 2, SAFE_OPEN = 4};
 
 extern int stateDelay;
 extern int code[4];  ///< Global array storing the entered code.
