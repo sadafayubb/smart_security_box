@@ -12,6 +12,11 @@ void LCDScreen::printLine(const char* str, int lineNumber) {
     lcd.print(str);
 }
 
+void LCDScreen:printLines(const char* str1, const char* str2) {
+    this->printLine(str1, 1);
+    this->printLine(str2, 2);
+}
+
 void LCDScreen::update(enum State state) {
     switch (state) {
         case IDLE:

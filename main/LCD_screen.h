@@ -33,6 +33,14 @@ public:
     void printLine(const char* str, int lineNumber);
 
     /**
+     * @brief Prints two lines to the LCD.
+     *
+     * @param str1 The string to be printed to line 1.
+     * @param str2 The string to be printed to line 2.
+     */
+    void printLines(const char* str1, const char* str2);
+
+    /**
      * @brief Updates the LCD display based on the system state.
      *
      * @param state The current system state.
