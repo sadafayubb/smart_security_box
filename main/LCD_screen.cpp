@@ -70,7 +70,7 @@ void LCDScreen::update(enum State state, int code[], int currentDigit) {
 char* LCDScreen::_codeToString(const int code[]) {
     static char result[5];
     for (int i = 0; i < 4; i++) {
-        result[i] = (code[i] == -1) ? "-" : ('0' + code[i]);  // 0xFE
+        result[i] = (code[i] == -1) ? "_" : ('0' + code[i]);  // 0xFE
     }
     result[4] = '\0';
     return result;
