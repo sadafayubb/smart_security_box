@@ -11,9 +11,13 @@
 #include <stdio.h>
 #include "constants.h"
 
+
+char line
+
+
 /**
  * @class LCDScreen
- * @brief Handles the LCD display for the security system.
+ * @brief Handles the LCD display for the Smart Security Box.
  */
 class LCDScreen {
 
@@ -45,9 +49,26 @@ public:
      *
      * @param state The current system state.
      */
-    void update(enum State state);
+    void update(enum State state, int code[], int currentDigit);
+    
+    /**
+     * @brief Clears the LCD screen
+     *
+     */
+    void clear();
 
 private:
+
+    char idleLine1[] = "IDLE";
+    char idleLine2[] = "";
+    char accessDeniedLine1[] = "ACCESS DENIED!";
+    char accessDeniedLine2[] = "";
+    char correctPasswordLine1[] = "ACCESS GRANTED!";
+    char correctPasswordLine2[] = "--->OPEN BOX<---";
+    char wrongPasswordLine1[] = "WRONG PASSWORD!";
+    char wrongPasswordLine2[] = "";
+    char boxOpenLine1[] = "--->BOX OPEN<---";
+    char boxOpenLine2[] = "PLEASE CLOSE BOX";
 
     /// Main LCD object from the LiquidCrystal_I2C module
     LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);

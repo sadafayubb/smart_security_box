@@ -1,46 +1,56 @@
 #include "LCD_screen.h"
+#include "Arduino.h"
 
 LCDScreen::LCDScreen() {
-    lcd.init();
-    lcd.backlight();
-    lcd.clear();
+    this->lcd.init();
+    this->lcd.backlight();
+    this->lcd.clear();
+}
+
+void LCDScreen::clear() {
+    this->lcd.clear();
 }
 
 void LCDScreen::printLine(const char* str, int lineNumber) {
-    lcd.clear();
-    lcd.setCursor(0, lineNumber - 1);
-    lcd.print(str);
+    this->lcd.setCursor(0, lineNumber - 1);
+    this->lcd.print(str);
 }
 
-void LCDScreen:printLines(const char* str1, const char* str2) {
+void LCDScreen::printLines(const char* str1, const char* str2) {
+    this->clear();
     this->printLine(str1, 1);
     this->printLine(str2, 2);
 }
 
-void LCDScreen::update(enum State state) {
+void LCDScreen::update(enum State state, int code[], int currentDigit) {
     switch (state) {
-        case IDLE:
-            printLine("IDLE", 1);
-            printLine("", 2);
+        case ENTERING_PASSWORD:
+            this->lcd.setCursor(0, 0);
+            this->lcd.print("PASSWORD: ");
+            this->lcd.print(_codeToString(code));
+            this->lcd.setCursor(0, 1);
+            this->lcd.print("CURRENT DIGIT: ");
+            this->lcd.print(currentDigit);
             break;
 
-        case ENTERING_PASSWORD:
-            lcd.setCursor(0, 0);
-            lcd.print("PASSWORD: ");
-            lcd.print(_codeToString(code));
-            lcd.setCursor(0, 1);
-            lcd.print("CURRENT DIGIT: ");
-            lcd.print(currentDigit);
+        case IDLE:
+            this->printLines(idleLine1, idleLine2)
+            break;
+
+        case WRONG_PASSWROD:
+            this->printLines(wrongPasswordLine1, wrongPasswordLine2);
+            break;
+
+        case CORRECT_PASSWORD:
+            this->printLines(correctPasswordLine1, correctPasswordLine2);
             break;
 
         case ACCESS_DENIED:
-            printLine("Access Denied!", 1);
-            printLine("", 2);
+            this->printLines(accessDeniedLine1, accessDeniedLine2);
             break;
 
         case SAFE_OPEN:
-            printLine("--->Box Open<---", 1);
-            printLine("Please Close Box", 2);
+            this->printLines(boxOpenLine1, boxOpenLine2);
             break;
     }
 }
