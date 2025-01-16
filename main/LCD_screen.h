@@ -12,9 +12,6 @@
 #include "constants.h"
 
 
-char line
-
-
 /**
  * @class LCDScreen
  * @brief Handles the LCD display for the Smart Security Box.
@@ -59,20 +56,19 @@ public:
 
 private:
 
-    char idleLine1[] = "IDLE";
-    char idleLine2[] = "";
-    char accessDeniedLine1[] = "ACCESS DENIED!";
-    char accessDeniedLine2[] = "";
-    char correctPasswordLine1[] = "ACCESS GRANTED!";
-    char correctPasswordLine2[] = "--->OPEN BOX<---";
-    char wrongPasswordLine1[] = "WRONG PASSWORD!";
-    char wrongPasswordLine2[] = "";
-    char boxOpenLine1[] = "--->BOX OPEN<---";
-    char boxOpenLine2[] = "PLEASE CLOSE BOX";
-
     /// Main LCD object from the LiquidCrystal_I2C module
     LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 
+    static const char* idleLine1;
+    static const char* idleLine2;
+    static const char* accessDeniedLine1;
+    static const char* accessDeniedLine2;
+    static const char* correctPasswordLine1;
+    static const char* correctPasswordLine2;
+    static const char* wrongPasswordLine1;
+    static const char* wrongPasswordLine2;
+    static const char* boxOpenLine1;
+    static const char* boxOpenLine2;
     /**
      * @brief Converts a numeric code array into a displayable string.
      *

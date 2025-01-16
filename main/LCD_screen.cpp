@@ -2,6 +2,18 @@
 #include "Arduino.h"
 
 LCDScreen::LCDScreen() {
+
+    const char* idleLine1 = "IDLE";
+    const char* idleLine2 = "";
+    const char* accessDeniedLine1 = "ACCESS DENIED!";
+    const char* accessDeniedLine2 = "";
+    const char* correctPasswordLine1 = "ACCESS GRANTED!";
+    const char* correctPasswordLine2 = "--->OPEN BOX<---";
+    const char* wrongPasswordLine1 = "WRONG PASSWORD!";
+    const char* wrongPasswordLine2 = "";
+    const char* boxOpenLine1 = "--->BOX OPEN<---";
+    const char* boxOpenLine2 = "PLEASE CLOSE BOX";
+
     this->lcd.init();
     this->lcd.backlight();
     this->lcd.clear();
@@ -34,23 +46,23 @@ void LCDScreen::update(enum State state, int code[], int currentDigit) {
             break;
 
         case IDLE:
-            this->printLines(idleLine1, idleLine2)
+            this->printLines(this->idleLine1, this->idleLine2);
             break;
 
-        case WRONG_PASSWROD:
-            this->printLines(wrongPasswordLine1, wrongPasswordLine2);
+        case WRONG_PASSWORD:
+            this->printLines(this->wrongPasswordLine1, this->wrongPasswordLine2);
             break;
 
         case CORRECT_PASSWORD:
-            this->printLines(correctPasswordLine1, correctPasswordLine2);
+            this->printLines(this->correctPasswordLine1, this->correctPasswordLine2);
             break;
 
         case ACCESS_DENIED:
-            this->printLines(accessDeniedLine1, accessDeniedLine2);
+            this->printLines(this->accessDeniedLine1, this->accessDeniedLine2);
             break;
 
         case SAFE_OPEN:
-            this->printLines(boxOpenLine1, boxOpenLine2);
+            this->printLines(this->boxOpenLine1, this->boxOpenLine2);
             break;
     }
 }
