@@ -26,9 +26,9 @@ public:
      * @param lineNumber The line number (1-based) where the string should be printed.
      */
     void printLine(const char* str, int lineNumber) {
-        lcd.clear();
-        lcd.setCursor(0, lineNumber - 1);
-        lcd.print(str);
+        this->lcd.clear();
+        this->lcd.setCursor(0, lineNumber - 1);
+        this->lcd.print(str);
     }
 
     /**
@@ -37,19 +37,20 @@ public:
      * @param lcd An initialized LiquidCrystal_I2C object.
      * @param state The current system state.
      */
+
     void update(enum State state) {
         switch (state) {
             case IDLE:
-                LCDPrintLines(lcd, idleLine1, idleLine2);
+                LCDPrintLines(idleLine1, idleLine2);
                 break;
             
             case ENTERING_PASSWORD:
-                lcd.setCursor(0, 0);
-                lcd.print("PASSWORD: ");
-                lcd.print(_codeToString(code));
-                lcd.setCursor(0, 1);
-                lcd.print("CURRENT DIGIT: ");
-                lcd.print(currentDigit); // Fixed missing semicolon
+                this->lcd.setCursor(0, 0);
+                this->lcd.print("PASSWORD: ");
+                this->lcd.print(_codeToString(code));
+                this->lcd.setCursor(0, 1);
+                this->lcd.print("CURRENT DIGIT: ");
+                this->lcd.print(currentDigit); // Fixed missing semicolon
                 break;
             
             case ACCESS_DENIED:
@@ -62,6 +63,12 @@ public:
         }
     }
 
+    LCDScreen() {
+        this->lcd.init();
+        this->lcd.backlight();
+        this->lcd.clear();
+    }
+
 private:
 
     /**
@@ -70,14 +77,8 @@ private:
      * @returns An initialized LCD object.
      */
 
+    // Main lcd object from the LiquidCrystal_I2C module
     LiquidCrystal_I2C lcd(0x27, 16, 2);
-
-    
-    LCDScreen() {
-        this->lcd.init();
-        this->lcd.backlight();
-        this->lcd.clear();
-    }
 
     /**
      * @brief Converts a numeric code array into a displayable string.
