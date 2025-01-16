@@ -1,9 +1,13 @@
-void setup() {
-  // put your setup code here, to run once:
+#include "potentiometerHandler.h"
 
+// Create a PotentiometerHandler object
+PotentiometerHandler potentiometerHandler(A0, 3);
+
+void setup() {
+  Serial.begin(9600);
+  potentiometerHandler.begin();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  potentiometerHandler.handleInput();
 }
