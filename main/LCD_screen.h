@@ -11,6 +11,24 @@
 #include <stdio.h>
 #include "constants.h"
 
+const char* idleLine1 = " Smart Security";
+const char* idleLine2 = "      Box";
+
+const char* accessDeniedLine1 = "ACCESS DENIED!";
+const char* accessDeniedLine2 = "";
+
+const char* correctPasswordLine1 = "ACCESS GRANTED!";
+const char* correctPasswordLine2 = "--> OPEN BOX <--";
+
+const char* wrongPasswordLine1 = "WRONG PASSWORD!";
+const char* wrongPasswordLine2 = "";
+
+const char* boxOpenLine1 = "  BOX IS OPEN";
+const char* boxOpenLine2 = "-> CLOSE DOOR <-";
+
+char* _codeToString(const int code[])
+void updateBoxLCD(LiquidCrystal_I2C lcd, enum State state, int code[], int currentDigit);
+void updatePasswordManagerLCD(LiquidCrystal_I2C lcd, ...);
 
 /**
  * @class LCDScreen
@@ -59,16 +77,6 @@ private:
     /// Main LCD object from the LiquidCrystal_I2C module
     LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 
-    static const char* idleLine1;
-    static const char* idleLine2;
-    static const char* accessDeniedLine1;
-    static const char* accessDeniedLine2;
-    static const char* correctPasswordLine1;
-    static const char* correctPasswordLine2;
-    static const char* wrongPasswordLine1;
-    static const char* wrongPasswordLine2;
-    static const char* boxOpenLine1;
-    static const char* boxOpenLine2;
     /**
      * @brief Converts a numeric code array into a displayable string.
      *
