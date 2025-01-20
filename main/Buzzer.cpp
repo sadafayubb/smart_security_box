@@ -1,6 +1,5 @@
 #include "Buzzer.h"
 
-
 Buzzer::Buzzer(uint8_t pin) {
     this->pin = pin;
     pinMode(pin, OUTPUT);
@@ -20,7 +19,6 @@ void Buzzer::numberSelected() {
     noTone(this->pin);
 
 }
-
 
 void wrongPassword() {
   tone(this->pin, 100);
