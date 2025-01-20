@@ -46,10 +46,6 @@ void updateBoxLCD(LiquidCrystal_I2C lcd, enum State state, int code[], int curre
 }
 
 
-void updatePasswordManagerLCD(LiquidCrystal_I2C lcd, enum State state, int code[], int currentDigit) {
-}
-
-
 LCDScreen::LCDScreen() {
     this->lcd.init();
     this->lcd.backlight();
