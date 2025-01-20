@@ -18,6 +18,8 @@ class Buzzer {
 
         void numberSelected();
 
+        void wrongPassword();
+
         void correctPassword();
 
         void boxClose();

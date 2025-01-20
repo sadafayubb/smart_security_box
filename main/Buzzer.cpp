@@ -21,6 +21,18 @@ void Buzzer::numberSelected() {
 
 }
 
+
+void wrongPassword() {
+  tone(this->pin, 100);
+  delay(100);
+  noTone(this->pin);
+  delay(100);
+  tone(this->pin, 100);
+  delay(200);
+  noTone(this->pin);
+}
+
+
 void Buzzer::correctPassword() {
   tone(this->pin, 261);
   delay(100);
