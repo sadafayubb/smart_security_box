@@ -17,15 +17,9 @@ char keys[4][4] = {
   {'*','0','#','D'}
 };
 
-// Match these to the actual GPIOs you used for the rows:
-byte rowPins[4] = {2, 3, 9, 10};  // <-- Example wiring to GPIO4, GPIO5, GPIO12, GPIO13
+byte rowPins[4] = {2, 3, 9, 10};
+byte colPins[4] = {12, 13, 14, 15};  
 
-// Match these to the actual GPIOs you used for the columns:
-byte colPins[4] = {12, 13, 14, 15};  // <-- Example wiring to GPIO14, GPIO2, GPIO3, GPIO15
-
-
-//byte rowPins[4] = {13,12,11,9}, 
-//colPins[4] = {15,14,3,2};
 Keypad keypad(makeKeymap(keys), rowPins, colPins, 4, 4);
 
 // ----- States -----
