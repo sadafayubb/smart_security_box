@@ -1,7 +1,9 @@
 #ifndef WIFIMANAGER_H
 #define WIFIMANAGER_H
 
-#include <ESP8266WiFi.h>  // Include Wi-Fi library
+#include <Arduino.h>
+#include <ESP8266WiFi.h>
+
 
 class WiFiManager {
 public:

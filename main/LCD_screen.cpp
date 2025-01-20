@@ -2,45 +2,61 @@
 #include "Arduino.h"
 
 
-char* _codeToString(const int code[]) {
-    static char result[5];
+String idleLine1 = " Smart Security";
+String idleLine2 = "      Box";
+
+String accessDeniedLine1 = "ACCESS DENIED!";
+String accessDeniedLine2 = "";
+
+String correctPasswordLine1 = "ACCESS GRANTED!";
+String correctPasswordLine2 = "--> OPEN BOX <--";
+
+String wrongPasswordLine1 = "WRONG PASSWORD!";
+String wrongPasswordLine2 = "";
+
+String boxOpenLine1 = "  BOX IS OPEN";
+String boxOpenLine2 = "-> CLOSE DOOR <-";
+
+
+String _codeToString(const int code[]) {
+    String result = "";  // Create an empty String object
     for (int i = 0; i < 4; i++) {
-        result[i] = (code[i] == -1) ? "_" : ('0' + code[i]);  // We can also use 0xFE
+        result += (code[i] == -1) ? "_" : String(code[i]);  // Append to String
     }
-    result[4] = '\0';
     return result;
 }
 
 
-void updateBoxLCD(LiquidCrystal_I2C lcd, enum State state, int code[], int currentDigit) {
+void updateBoxLCD(LCDScreen* lcd, enum State state, int code[], int currentDigit) {
     switch (state) {
         case ENTERING_PASSWORD:
-            this->lcd.setCursor(0, 0);
-            this->lcd.print("PASSWORD: ");
-            this->lcd.print(_codeToString(code));
-            this->lcd.setCursor(0, 1);
-            this->lcd.print("CURRENT DIGIT: ");
-            this->lcd.print(currentDigit);
+            lcd->clear();
+            lcd->lcd.setCursor(0, 0);
+            lcd->lcd.print("Password: ");
+            lcd->lcd.print(_codeToString(code));
+            lcd->lcd.setCursor(0, 1);
+            lcd->lcd.print("Current Digit: ");
+            lcd->lcd.print(currentDigit);
             break;
 
         case IDLE:
-            this->printLines(this->idleLine1, this->idleLine2);
+            lcd->printLines(idleLine1, idleLine2);
             break;
 
         case WRONG_PASSWORD:
-            this->printLines(this->wrongPasswordLine1, this->wrongPasswordLine2);
+            lcd->printLines(wrongPasswordLine1, wrongPasswordLine2);
             break;
 
         case CORRECT_PASSWORD:
-            this->printLines(this->correctPasswordLine1, this->correctPasswordLine2);
+            lcd->printLines(correctPasswordLine1, correctPasswordLine2);
             break;
 
         case ACCESS_DENIED:
-            this->printLines(this->accessDeniedLine1, this->accessDeniedLine2);
+            lcd->printLines(accessDeniedLine1, accessDeniedLine2);
             break;
 
-        case SAFE_OPEN:
-            this->printLines(this->boxOpenLine1, this->boxOpenLine2);
+        case BOX_OPEN:
+            lcd->printLines(boxOpenLine1, boxOpenLine2);
             break;
     }
 }
@@ -56,12 +72,12 @@ void LCDScreen::clear() {
     this->lcd.clear();
 }
 
-void LCDScreen::printLine(const char* str, int lineNumber) {
+void LCDScreen::printLine(String str, int lineNumber) {
     this->lcd.setCursor(0, lineNumber - 1);
     this->lcd.print(str);
 }
 
-void LCDScreen::printLines(const char* str1, const char* str2) {
+void LCDScreen::printLines(String str1, String str2) {
     this->clear();
     this->printLine(str1, 1);
     this->printLine(str2, 2);

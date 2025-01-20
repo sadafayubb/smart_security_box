@@ -20,7 +20,7 @@ void Buzzer::numberSelected() {
 
 }
 
-void wrongPassword() {
+void Buzzer::wrongPassword() {
   tone(this->pin, 100);
   delay(100);
   noTone(this->pin);
