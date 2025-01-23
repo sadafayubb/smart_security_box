@@ -1,3 +1,5 @@
+/** @file password_manager.ino */
+
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 #include "WiFiManager.h"      // Include WiFiManager class
@@ -7,63 +9,74 @@
 
 
 
-// ----- LCD and Keypad Setup -----
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+/** @brief LCD screen object. */
+LCDScreen* lcd;
 
-char keys[4][4] = {
-  {'1','2','3','A'},
-  {'4','5','6','B'},
-  {'7','8','9','C'},
-  {'*','0','#','D'}
-};
-
-byte rowPins[4] = {2, 3, 9, 10};
-byte colPins[4] = {12, 13, 14, 15};  
-
+/** @brief Keypad object */
 Keypad keypad(makeKeymap(keys), rowPins, colPins, 4, 4);
 
-// ----- States -----
+/** @brief System states */
 enum { S_ID, S_PASS } state = S_ID;
 
 
-// ----- Firesbase setup -----
+// -----------------------------------------------------------------------------
+// Firebase setup
+// -----------------------------------------------------------------------------
+/** @brief Wi-Fi SSID. */
+const char* ssid = "Melek"; 
 
-const char* ssid = "iPhone von Frederik"; // Replace with your Wi-Fi name
-const char* pass = "abcdefg123456"; // Replace with your Wi-Fi password
+/** @brief Wi-Fi password. */
+const char* pass = "melekdeling";
 
-#define FIREBASE_HOST "https://password-entries-default-rtdb.europe-west1.firebasedatabase.app/"  // Replace with your Firebase Realtime Database URL
-#define FIREBASE_AUTH "7iTOn3J10Ob0mCVnUtG8dQY4Qmyc6kTBi926A6xa"                 // Replace with your Firebase Database Secret or API Key
+/** @brief Firebase database URL */
+#define FIREBASE_HOST "https://password-entries-default-rtdb.europe-west1.firebasedatabase.app/"
 
-// Declare WiFiManager and FirebaseHandler objects
+/** @brief Firebase Auth key. */
+#define FIREBASE_AUTH "7iTOn3J10Ob0mCVnUtG8dQY4Qmyc6kTBi926A6xa"
+
+/** @brief WiFiManager object for handling the Wi-Fi connection. */
 WiFiManager* wifiManager;
+
+/** @brief FirebaseHandler object for Firebase operations. */
 FirebaseHandler* firebase;
 
-// ----- Variables -----
+/** @brief Stores Box ID and entered password */
 String boxID, password;
-String validIDs[] = {"123", "4567", "9999"};  // Example valid IDs (This is just for now until its connected with Firesbase)
 const int PASS_LEN = 4;
 
 
-// ----- Function Prototypes -----
+// -----------------------------------------------------------------------------
+// Function prototypes
+// -----------------------------------------------------------------------------
 bool boxExists(const String &id);
 void checkConnection();
 
 
+// -----------------------------------------------------------------------------
+// setup()
+// -----------------------------------------------------------------------------
+/**
+ * @brief Main arduino setup function responsible for initializing objects, and hardware components.
+ */
 void setup() {
 
   Serial.begin(115200);
+  lcd         = new LCDScreen();
   wifiManager = new WiFiManager(ssid, pass);
-  firebase = new FirebaseHandler(FIREBASE_HOST, FIREBASE_AUTH);
+  firebase    = new FirebaseHandler(FIREBASE_HOST, FIREBASE_AUTH);
 
   wifiManager->connect();  // Connect to WiFi
-
-  lcd.init();
-  lcd.backlight();
-  lcd.clear();
-  lcd.print("Enter Box ID:");
+  lcd->clear();
+  lcd->printLine("Enter Box ID:", 1);
 
 }
 
+// -----------------------------------------------------------------------------
+// loop()
+// -----------------------------------------------------------------------------
+/**
+ * @brief Main arduino loop function. This runs constantly and allows for user interaction.
+ */
 void loop() {
   checkConnection();
   char k = keypad.getKey();
@@ -76,48 +89,43 @@ void loop() {
       if (k == '*') {
         // Clear Box ID
         boxID = "";
-        lcd.clear();
-        lcd.print("Enter Box ID:");
+        lcd->clear();
+        lcd->printLine("Enter Box ID:", 1);
       } 
       else if (k == '#') {
         // Validate ID
         if (boxExists(boxID)) {
           password = "";
           state = S_PASS;
-          lcd.clear();
-          lcd.print("Enter Password:");
+          lcd->printLine("Enter Password:", 1);
         } else {
           // Show error briefly, then reset
-          lcd.clear();
-          lcd.print("Invalid Box ID!");
+          lcd->clear();
+          lcd->printLine("Invalid Box ID!", 1);
           delay(2000);
           boxID = "";
-          lcd.clear();
-          lcd.print("Enter Box ID:");
+          lcd->clear();
+          lcd->printLine("Enter Box ID:", 1);
         }
       } else if (k == 'A') {
         // Validate ID
         if (!boxExists(boxID)) {
           password = "";
           state = S_PASS;
-          lcd.clear();
-          lcd.print("Enter 4-digit PW:");
+          lcd->clear();
+          lcd->printLine("Enter 4-digit PW:", 1);
         } else {
           // Show error briefly, then reset
-          lcd.clear();
-          lcd.print("Box ID already");
-          lcd.setCursor(0, 1);
-          lcd.print("exists!");
+          lcd->printLines("Box ID already", "exists!");
           delay(2000);
           boxID = "";
-          lcd.clear();
-          lcd.print("Enter Box ID:");
+          lcd->clear();
+          lcd->printLine("Enter Box ID:");
         }
       } else {
         // Append character to Box ID
         boxID += k;
-        lcd.setCursor(0, 1);
-        lcd.print(boxID);
+        lcd->printLine(boxID, 2);
       }
       break;
 
@@ -126,25 +134,19 @@ void loop() {
       if (k == '*') {
         // Clear password
         password = "";
-        lcd.clear();
-        lcd.print("Enter 4-digit PW:");
+        lcd->clear();
+        lcd->printLine("Enter 4-digit PW:", 1);
       } 
       else if (k == '#') {
         // Submit password only if it's exactly 4 digits
         if (password.length() == PASS_LEN) {
-          lcd.clear();
-          lcd.print("Saving...");
-          lcd.setCursor(0, 1);
-          lcd.print("Password: " + password);
+          lcd->printLines("Saving...", "Password: " + password);
           delay(2000);
 
           checkConnection();
 
           if (!firebase->savePassword("box" + boxID, password)) {  // Saving password unsuccessful
-            lcd.clear();
-            lcd.print("UNABLE TO SAVE");
-            lcd.setCursor(0, 1);
-            lcd.print("PASSWORD!");
+            lcd->printLines("UNABLE TO SAVE", "PASSWORD!");
             delay(3000);
           }
 
@@ -152,38 +154,40 @@ void loop() {
           boxID = "";
           password = "";
           state = S_ID;
-          lcd.clear();
-          lcd.print("Enter Box ID:");
+          lcd->clear();
+          lcd->printLine("Enter Box ID:", 1);
         } else {
           // Not enough (or too many) digits
-          lcd.clear();
-          lcd.print("Need 4 digits!");
+          lcd->printLines("Need 4 digits!", "");
           delay(2000);
-          lcd.clear();
-          lcd.print("Enter 4-digit PW:");
+          lcd->clear();
+          lcd->printLine("Enter 4-digit PW:", 1);
         }
       }
       else if (isDigit(k) && password.length() < PASS_LEN) {
         // Append digit if under 4
         password += k;
-        lcd.setCursor(0, 1);
-        lcd.print(password);
+        lcd->print(password, 2);
       }
       // If the  password is already 4 digits long and the user enters more we just ignor it
       break;
   }
 }
 
-// ----- Check if Box ID is Valid -----
+/**
+ * @brief Checks If a box ID exists on the Firebase server.
+ */
 bool boxExists(const String &id) {
   checkConnection();
-  lcd.clear();
-  lcd.print("Loading...");
+  lcd->clear();
+  lcd->printLine("Loading...", 1);
   if (firebase->getPassword("box" + id) == "") return false; 
   return true;
 }
 
-// ----- Check WiFi Conncetion -----
+/**
+ * @brief Checks WiFi connection and attempts to reconnect if lost.
+ */
 void checkConnection() {
   if (WiFi.status() != WL_CONNECTED) {
     wifiManager->connect(); 

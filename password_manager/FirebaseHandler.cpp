@@ -1,3 +1,5 @@
+/** @file FirebaseHandler.cpp */
+
 #include "FirebaseHandler.h"
 #include <ArduinoJson.h>
 
@@ -17,18 +19,16 @@ void FirebaseHandler::logEntry(const String& boxID, const String& entryStatus) {
   }
 }
 
-bool FirebaseHandler::savePassword(const String& boxID, const String& password) {
+void FirebaseHandler::savePassword(const String& boxID, const String& password) {
   String path = "/passwords/" + boxID;
   int result = firebase.pushString(path, password);
 
   // Check if the operation was successful for debugging DELETE LATER!!!!!!!!
   if (result == 200) {
     Serial.println("Password successfully saved!");
-    return true;
   } else {
     Serial.print("Failed to save password. Error code: ");
     Serial.println(result);
-    return false;
   }
 }
 
