@@ -1,3 +1,5 @@
+/** @file FirebaseHandler.h */
+
 #ifndef FIREBASEHANDLER_H
 #define FIREBASEHANDLER_H
 

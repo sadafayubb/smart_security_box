@@ -1,3 +1,5 @@
+/** @file LEDs.h */
+
 #ifndef LEDS_H
 #define LEDS_H
 

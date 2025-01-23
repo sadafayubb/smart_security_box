@@ -1,3 +1,5 @@
+/** @file motor_module.h */
+
 #ifndef MOTOR_MODULE_H
 #define MOTOR_MODULE_H
 

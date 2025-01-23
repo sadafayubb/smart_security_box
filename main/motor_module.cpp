@@ -1,3 +1,5 @@
+/** @file motor_module.cpp */
+
 #include "motor_module.h"
 
 // Servo motor object
@@ -13,7 +15,7 @@ void setupMotor(int pin) {
 // Lock or unlock based on the accessGranted status
 void setLock(bool accessGranted) {
     if (accessGranted) {
-        servo.write(90); // Unlock position
+        servo.write(170); // Unlock position
     } else {
         servo.write(0);  // Lock position
     }

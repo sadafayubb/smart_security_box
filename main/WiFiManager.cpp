@@ -1,3 +1,5 @@
+/** @file WiFiManager.cpp */
+
 #include "WiFiManager.h"
 
 WiFiManager::WiFiManager(const char* ssid, const char* password)
