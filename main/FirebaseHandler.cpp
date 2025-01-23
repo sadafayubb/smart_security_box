@@ -1,11 +1,23 @@
-/** @file FirebaseHandler.cpp */
+/** @file FirebaseHandler.cpp
+ *  @brief Implementation of the FirebaseHandler class for interacting with Firebase.
+ */
 
 #include "FirebaseHandler.h"
 #include <ArduinoJson.h>
 
+/**
+ * @brief Constructs a FirebaseHandler object.
+ * @param host The Firebase host URL.
+ * @param auth The Firebase authentication token.
+ */
 FirebaseHandler::FirebaseHandler(const String& host, const String& auth)
   : firebase(host, auth) {}
 
+/**
+ * @brief Logs an entry status to Firebase under the specified box ID.
+ * @param boxID The ID of the lockbox.
+ * @param entryStatus The status to log (e.g., "Unlocked", "Failed Attempt").
+ */
 void FirebaseHandler::logEntry(const String& boxID, const String& entryStatus) {
   String path = "/entryLog/" + boxID;
   int result = firebase.pushString(path, entryStatus);
@@ -19,11 +31,16 @@ void FirebaseHandler::logEntry(const String& boxID, const String& entryStatus) {
   }
 }
 
+/**
+ * @brief Saves a password to Firebase under the specified box ID.
+ * @param boxID The ID of the lockbox.
+ * @param password The password to save.
+ */
 void FirebaseHandler::savePassword(const String& boxID, const String& password) {
   String path = "/passwords/" + boxID;
   int result = firebase.pushString(path, password);
 
-  // Check if the operation was successful for debugging DELETE LATER!!!!!!!!
+  // Check if the operation was successful for debugging.
   if (result == 200) {
     Serial.println("Password successfully saved!");
   } else {
@@ -32,6 +49,11 @@ void FirebaseHandler::savePassword(const String& boxID, const String& password) 
   }
 }
 
+/**
+ * @brief Retrieves the password associated with the given user ID from Firebase.
+ * @param userID The ID of the user whose password is to be retrieved.
+ * @return The retrieved password as a string. Returns an empty string if the operation fails.
+ */
 String FirebaseHandler::getPassword(const String& userID) {
   String path = "/passwords/" + userID;
   String json = firebase.getJson(path);
