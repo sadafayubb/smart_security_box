@@ -2,12 +2,10 @@
 
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
-#include "WiFiManager.h"      // Include WiFiManager class
+#include "WiFiManager.h"    
 #include <Keypad.h>
 #include <Firebase.h>
-#include "FirebaseHandler.h" // Include FirebaseHandler class
-
-
+#include "FirebaseHandler.h" 
 
 /** @brief LCD screen object. */
 LCDScreen* lcd;
@@ -56,7 +54,7 @@ void checkConnection();
 // setup()
 // -----------------------------------------------------------------------------
 /**
- * @brief Main arduino setup function responsible for initializing objects, and hardware components.
+ * @brief Main Arduino setup function responsible for initializing objects and hardware components.
  */
 void setup() {
 
@@ -138,7 +136,7 @@ void loop() {
         lcd->printLine("Enter 4-digit PW:", 1);
       } 
       else if (k == '#') {
-        // Submit password only if it's exactly 4 digits
+        // Submit password only if it is exactly 4 digits
         if (password.length() == PASS_LEN) {
           lcd->printLines("Saving...", "Password: " + password);
           delay(2000);
