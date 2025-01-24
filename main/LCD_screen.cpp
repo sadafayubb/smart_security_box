@@ -60,7 +60,7 @@ const char* boxOpenLine2 = "-> CLOSE DOOR <-";
  * @brief Converts the code array into a string.
  *
  * @param code The integer array representing the code.
- * @return A character array representing the code as a string.
+ * @return The code as a string.
  */
 String _codeToString(const int code[]) {
     String result = "";  // Create an empty String object

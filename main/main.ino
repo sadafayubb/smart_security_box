@@ -189,7 +189,7 @@ void loop() {
                      buzzer, 
                      buttonPin, 
                      potPin, 
-                     firstReading)  // Allow input
+                     firstReading);  // Allow input
         if (codeIndex == 4) {
             checkCode();  // If four digits have been entered check the code
         }

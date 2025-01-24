@@ -15,19 +15,9 @@
  * @brief Converts the code array into a string.
  *
  * @param code The integer array representing the code.
- * @return A character array representing the code as a string.
+ * @return The code as a string.
  */
-char* _codeToString(const int code[]);
-
-/**
- * @brief Updates the LCD screen based on the current state and inputs.
- *
- * @param lcd The LiquidCrystal_I2C object controlling the display.
- * @param state The current state of the system.
- * @param code The code being entered or displayed.
- * @param currentDigit The current digit being modified.
- */
-void updateBoxLCD(LiquidCrystal_I2C lcd, enum State state, int code[], int currentDigit);
+String _codeToString(const int code[]);
 
 /**
  * @class LCDScreen
@@ -62,11 +52,22 @@ public:
      */
     void clear();
 
-private:
     /**
      * @brief Main LCD object from the LiquidCrystal_I2C module.
      */
     LiquidCrystal_I2C lcd = LiquidCrystal_I2C(0x27, 16, 2);
 };
+
+/**
+ * @brief Updates the LCD screen based on the current state and inputs.
+ *
+ * @param lcd The LiquidCrystal_I2C object controlling the display.
+ * @param state The current state of the system.
+ * @param code The code being entered or displayed.
+ * @param currentDigit The current digit being modified.
+ */
+void updateBoxLCD(LCDScreen* lcd, enum State state, int code[], int currentDigit);
+
+
 
 #endif // LCD_SCREEN_H

@@ -28,6 +28,6 @@ int readAnalogValue(int potPin);
  * @param potPin The analog pin connected to the potentiometer.
  * @param firstReading Boolean flag to handle initial reading correction.
  */
-void chooseNumber(unsigned long &lastInteractionTime, LCDScreen lcd, enum State state, int selectedNumbers[], int selectedNumber, int codeIndex, Buzzer buzzer, int buttonPin, int potPin, bool firstReading);
+void chooseNumber(unsigned long &lastInteractionTime, LCDScreen* lcd, enum State state, int selectedNumbers[], int selectedNumber, int codeIndex, Buzzer* buzzer, int buttonPin, int potPin, bool firstReading);
 
 #endif // POTENTIOMETER_H
