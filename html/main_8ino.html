@@ -103,19 +103,206 @@ $(function(){initNavTree('main_8ino.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">main.ino File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
+<div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_buzzer_8h_source.html">buzzer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_l_c_d__screen_8h_source.html">LCD_screen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="constants_8h_source.html">constants.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="motor__module_8h_source.html">motor_module.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_l_e_ds_8h_source.html">LEDs.h</a>&quot;</code><br />
+<code>#include &lt;Firebase.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_firebase_handler_8h_source.html">FirebaseHandler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_wi_fi_manager_8h_source.html">WiFiManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="potentiometer_8h_source.html">potentiometer.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:acd939b64a048d6ed459be654090a838a" id="r_acd939b64a048d6ed459be654090a838a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd939b64a048d6ed459be654090a838a">FIREBASE_HOST</a>&#160;&#160;&#160;&quot;https://<a class="el" href="password__manager_8ino.html#acbd76b816d055b7a642c219fd9751020">password</a>-entries-default-rtdb.europe-west1.firebasedatabase.app/&quot;</td></tr>
+<tr class="memdesc:acd939b64a048d6ed459be654090a838a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Firebase database URL.  <br /></td></tr>
+<tr class="separator:acd939b64a048d6ed459be654090a838a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a689f00c928d30a9e6b9c294e8148c1" id="r_a7a689f00c928d30a9e6b9c294e8148c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a689f00c928d30a9e6b9c294e8148c1">FIREBASE_AUTH</a>&#160;&#160;&#160;&quot;7iTOn3J10Ob0mCVnUtG8dQY4Qmyc6kTBi926A6xa&quot;</td></tr>
+<tr class="memdesc:a7a689f00c928d30a9e6b9c294e8148c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Firebase Auth key.  <br /></td></tr>
+<tr class="separator:a7a689f00c928d30a9e6b9c294e8148c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a7c3170c26456d31621c93f0c6bfc5fa6" id="r_a7c3170c26456d31621c93f0c6bfc5fa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c3170c26456d31621c93f0c6bfc5fa6">resetSystem</a> ()</td></tr>
+<tr class="memdesc:a7c3170c26456d31621c93f0c6bfc5fa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the system state and clears selected numbers.  <br /></td></tr>
+<tr class="separator:a7c3170c26456d31621c93f0c6bfc5fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bea7c1d7f7a9d76e7c8fd383c1decff" id="r_a7bea7c1d7f7a9d76e7c8fd383c1decff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bea7c1d7f7a9d76e7c8fd383c1decff">checkCode</a> ()</td></tr>
+<tr class="memdesc:a7bea7c1d7f7a9d76e7c8fd383c1decff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the entered code against the correct code.  <br /></td></tr>
+<tr class="separator:a7bea7c1d7f7a9d76e7c8fd383c1decff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eb9b74023d402af58366ad5ad39166d" id="r_a4eb9b74023d402af58366ad5ad39166d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4eb9b74023d402af58366ad5ad39166d">updateCorrectCode</a> ()</td></tr>
+<tr class="memdesc:a4eb9b74023d402af58366ad5ad39166d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the correct code by retrieving it from Firebase.  <br /></td></tr>
+<tr class="separator:a4eb9b74023d402af58366ad5ad39166d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14baada25fcf37c32a9a509436290d5" id="r_ac14baada25fcf37c32a9a509436290d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac14baada25fcf37c32a9a509436290d5">checkConnection</a> ()</td></tr>
+<tr class="memdesc:ac14baada25fcf37c32a9a509436290d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks WiFi connection and attempts to reconnect if lost.  <br /></td></tr>
+<tr class="separator:ac14baada25fcf37c32a9a509436290d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main arduino setup function responsible for initializing objects, pins, and hardware components.  <br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main arduino loop function. This runs constantly and allows for user interaction.  <br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a587ba0cb07f02913598610049a3bbb79" id="r_a587ba0cb07f02913598610049a3bbb79"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a587ba0cb07f02913598610049a3bbb79">ssid</a> = &quot;Melek&quot;</td></tr>
+<tr class="memdesc:a587ba0cb07f02913598610049a3bbb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wi-Fi SSID.  <br /></td></tr>
+<tr class="separator:a587ba0cb07f02913598610049a3bbb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bef28806edf8f4c8cb82584b7e8c3cb" id="r_a3bef28806edf8f4c8cb82584b7e8c3cb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3bef28806edf8f4c8cb82584b7e8c3cb">pass</a> = &quot;melekdeling&quot;</td></tr>
+<tr class="memdesc:a3bef28806edf8f4c8cb82584b7e8c3cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wi-Fi password.  <br /></td></tr>
+<tr class="separator:a3bef28806edf8f4c8cb82584b7e8c3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c51929c72f18fd2437f857d4fba94e" id="r_a89c51929c72f18fd2437f857d4fba94e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wi_fi_manager.html">WiFiManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89c51929c72f18fd2437f857d4fba94e">wifiManager</a></td></tr>
+<tr class="memdesc:a89c51929c72f18fd2437f857d4fba94e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_wi_fi_manager.html" title="A class to manage WiFi connections on the ESP8266.">WiFiManager</a> object for handling the Wi-Fi connection.  <br /></td></tr>
+<tr class="separator:a89c51929c72f18fd2437f857d4fba94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e263faaf1f060856aa9d40a59ff6699" id="r_a0e263faaf1f060856aa9d40a59ff6699"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_firebase_handler.html">FirebaseHandler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e263faaf1f060856aa9d40a59ff6699">firebase</a></td></tr>
+<tr class="memdesc:a0e263faaf1f060856aa9d40a59ff6699"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_firebase_handler.html" title="A class to handle Firebase operations such as logging entries and managing passwords.">FirebaseHandler</a> object for Firebase operations.  <br /></td></tr>
+<tr class="separator:a0e263faaf1f060856aa9d40a59ff6699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab203b504762cfa71d6b2135830018fdb" id="r_ab203b504762cfa71d6b2135830018fdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_c_d_screen.html">LCDScreen</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab203b504762cfa71d6b2135830018fdb">lcd</a></td></tr>
+<tr class="memdesc:ab203b504762cfa71d6b2135830018fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD screen object.  <br /></td></tr>
+<tr class="separator:ab203b504762cfa71d6b2135830018fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93f76f31c72aa926d2f7b28396056aaa" id="r_a93f76f31c72aa926d2f7b28396056aaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_buzzer.html">Buzzer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f76f31c72aa926d2f7b28396056aaa">buzzer</a></td></tr>
+<tr class="memdesc:a93f76f31c72aa926d2f7b28396056aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_buzzer.html">Buzzer</a> object for sound notifications.  <br /></td></tr>
+<tr class="separator:a93f76f31c72aa926d2f7b28396056aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e05d17205a66ab1ae96282b03141b95" id="r_a0e05d17205a66ab1ae96282b03141b95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_l_e_ds.html">LEDs</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e05d17205a66ab1ae96282b03141b95">leds</a></td></tr>
+<tr class="memdesc:a0e05d17205a66ab1ae96282b03141b95"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_l_e_ds.html" title="A class to manage and update the state of LEDs based on the given state.">LEDs</a> object for controlling the <a class="el" href="class_l_e_ds.html" title="A class to manage and update the state of LEDs based on the given state.">LEDs</a>.  <br /></td></tr>
+<tr class="separator:a0e05d17205a66ab1ae96282b03141b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db44bec6a2ebf1a0cc819b5c9191cee" id="r_a0db44bec6a2ebf1a0cc819b5c9191cee"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="constants_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0db44bec6a2ebf1a0cc819b5c9191cee">state</a> = <a class="el" href="constants_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8afd6a0e4343048b10646dd2976cc5ad18">IDLE</a></td></tr>
+<tr class="memdesc:a0db44bec6a2ebf1a0cc819b5c9191cee"><td class="mdescLeft">&#160;</td><td class="mdescRight">System state enum.  <br /></td></tr>
+<tr class="separator:a0db44bec6a2ebf1a0cc819b5c9191cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a59094bfd2721b201753dcc4aa5a7e0" id="r_a0a59094bfd2721b201753dcc4aa5a7e0"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a59094bfd2721b201753dcc4aa5a7e0">potPin</a> = A0</td></tr>
+<tr class="memdesc:a0a59094bfd2721b201753dcc4aa5a7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Potentiometer input pin.  <br /></td></tr>
+<tr class="separator:a0a59094bfd2721b201753dcc4aa5a7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddb8b6ae564eb22f7c74f2683a63b8e" id="r_a4ddb8b6ae564eb22f7c74f2683a63b8e"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ddb8b6ae564eb22f7c74f2683a63b8e">buttonPin</a> = 16</td></tr>
+<tr class="memdesc:a4ddb8b6ae564eb22f7c74f2683a63b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Button input pin.  <br /></td></tr>
+<tr class="separator:a4ddb8b6ae564eb22f7c74f2683a63b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988a608b186de34e793324aee3ec73ee" id="r_a988a608b186de34e793324aee3ec73ee"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a988a608b186de34e793324aee3ec73ee">buzzerPin</a> = 15</td></tr>
+<tr class="memdesc:a988a608b186de34e793324aee3ec73ee"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_buzzer.html">Buzzer</a> output pin.  <br /></td></tr>
+<tr class="separator:a988a608b186de34e793324aee3ec73ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e0822e230092cca844cd048a9d6cd6" id="r_a12e0822e230092cca844cd048a9d6cd6"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12e0822e230092cca844cd048a9d6cd6">greenLEDPin</a> = 14</td></tr>
+<tr class="memdesc:a12e0822e230092cca844cd048a9d6cd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Green LED output pin.  <br /></td></tr>
+<tr class="separator:a12e0822e230092cca844cd048a9d6cd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c39ef3bde8de33d86422b2796af548" id="r_a50c39ef3bde8de33d86422b2796af548"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50c39ef3bde8de33d86422b2796af548">yellowLEDPin</a> = 12</td></tr>
+<tr class="memdesc:a50c39ef3bde8de33d86422b2796af548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Yellow LED output pin.  <br /></td></tr>
+<tr class="separator:a50c39ef3bde8de33d86422b2796af548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a37a0731c2f8691dd9e3abf460fd1f9" id="r_a2a37a0731c2f8691dd9e3abf460fd1f9"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a37a0731c2f8691dd9e3abf460fd1f9">redLEDPin</a> = 13</td></tr>
+<tr class="memdesc:a2a37a0731c2f8691dd9e3abf460fd1f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Red LED output pin.  <br /></td></tr>
+<tr class="separator:a2a37a0731c2f8691dd9e3abf460fd1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4160bb437c685a28cde6b624c2cc49dd" id="r_a4160bb437c685a28cde6b624c2cc49dd"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4160bb437c685a28cde6b624c2cc49dd">servoMotorPin</a> = 2</td></tr>
+<tr class="memdesc:a4160bb437c685a28cde6b624c2cc49dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Servo motor control pin.  <br /></td></tr>
+<tr class="separator:a4160bb437c685a28cde6b624c2cc49dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32ece16c872ffd44bb017caf3f7274d0" id="r_a32ece16c872ffd44bb017caf3f7274d0"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32ece16c872ffd44bb017caf3f7274d0">boxID</a> = &quot;004&quot;</td></tr>
+<tr class="memdesc:a32ece16c872ffd44bb017caf3f7274d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">BOX ID for Firebase.  <br /></td></tr>
+<tr class="separator:a32ece16c872ffd44bb017caf3f7274d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad58c9e5ec6f1cc44e98f9e4279ad84bc" id="r_ad58c9e5ec6f1cc44e98f9e4279ad84bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad58c9e5ec6f1cc44e98f9e4279ad84bc">selectedNumbers</a> [4] = { -1, -1, -1, -1 }</td></tr>
+<tr class="memdesc:ad58c9e5ec6f1cc44e98f9e4279ad84bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array storing user input numbers.  <br /></td></tr>
+<tr class="separator:ad58c9e5ec6f1cc44e98f9e4279ad84bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21fa1997fedbd21fafc49cb97b2c000" id="r_aa21fa1997fedbd21fafc49cb97b2c000"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa21fa1997fedbd21fafc49cb97b2c000">codeIndex</a> = 0</td></tr>
+<tr class="memdesc:aa21fa1997fedbd21fafc49cb97b2c000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracks which digit the user is selecting.  <br /></td></tr>
+<tr class="separator:aa21fa1997fedbd21fafc49cb97b2c000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a176560937694baccc8a92ab840fafac1" id="r_a176560937694baccc8a92ab840fafac1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a176560937694baccc8a92ab840fafac1">attemptsUsed</a> = 0</td></tr>
+<tr class="memdesc:a176560937694baccc8a92ab840fafac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tracks the number of failed attempts.  <br /></td></tr>
+<tr class="separator:a176560937694baccc8a92ab840fafac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768ceffd92a156c2829e4af4d63260ad" id="r_a768ceffd92a156c2829e4af4d63260ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a768ceffd92a156c2829e4af4d63260ad">selectedNumber</a> = 0</td></tr>
+<tr class="memdesc:a768ceffd92a156c2829e4af4d63260ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current selected number from the potentiometer.  <br /></td></tr>
+<tr class="separator:a768ceffd92a156c2829e4af4d63260ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfa9c9efda64a4e435069767b5831eb7" id="r_acfa9c9efda64a4e435069767b5831eb7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfa9c9efda64a4e435069767b5831eb7">maxAttempts</a> = 3</td></tr>
+<tr class="memdesc:acfa9c9efda64a4e435069767b5831eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum allowed password attempts before access is denied.  <br /></td></tr>
+<tr class="separator:acfa9c9efda64a4e435069767b5831eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7963092e6404e991860b9f0cd7b0f38" id="r_ab7963092e6404e991860b9f0cd7b0f38"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7963092e6404e991860b9f0cd7b0f38">firstReading</a> = true</td></tr>
+<tr class="memdesc:ab7963092e6404e991860b9f0cd7b0f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag to indicate if it is the first user input reading. Is used to ensure IDLE mode upon program start.  <br /></td></tr>
+<tr class="separator:ab7963092e6404e991860b9f0cd7b0f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6c3b0edf5cd2083b653e4b45b5be5f" id="r_aca6c3b0edf5cd2083b653e4b45b5be5f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca6c3b0edf5cd2083b653e4b45b5be5f">lastInteractionTime</a> = 0</td></tr>
+<tr class="memdesc:aca6c3b0edf5cd2083b653e4b45b5be5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timestamp of the last interaction.  <br /></td></tr>
+<tr class="separator:aca6c3b0edf5cd2083b653e4b45b5be5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c36040fb5a8e7537db9eb933e919b5" id="r_a13c36040fb5a8e7537db9eb933e919b5"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13c36040fb5a8e7537db9eb933e919b5">timeoutDuration</a> = 60000</td></tr>
+<tr class="memdesc:a13c36040fb5a8e7537db9eb933e919b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout duration for inactivity.  <br /></td></tr>
+<tr class="separator:a13c36040fb5a8e7537db9eb933e919b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e166222c3a796c071c800f76470384" id="r_a54e166222c3a796c071c800f76470384"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e166222c3a796c071c800f76470384">resetDuration</a> = 1800000</td></tr>
+<tr class="memdesc:a54e166222c3a796c071c800f76470384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duration after which the system resets due to inactivity (and resets attempt count).  <br /></td></tr>
+<tr class="separator:a54e166222c3a796c071c800f76470384"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b4551c4ed4171013bea56580274082" id="r_a29b4551c4ed4171013bea56580274082"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29b4551c4ed4171013bea56580274082">correctCode</a> [4]</td></tr>
+<tr class="memdesc:a29b4551c4ed4171013bea56580274082"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is there to contain the correct password.  <br /></td></tr>
+<tr class="separator:a29b4551c4ed4171013bea56580274082"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7a689f00c928d30a9e6b9c294e8148c1" name="a7a689f00c928d30a9e6b9c294e8148c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a689f00c928d30a9e6b9c294e8148c1">&#9670;&#160;</a></span>FIREBASE_AUTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FIREBASE_AUTH&#160;&#160;&#160;&quot;7iTOn3J10Ob0mCVnUtG8dQY4Qmyc6kTBi926A6xa&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Firebase Auth key. </p>
+
+</div>
+</div>
+<a id="acd939b64a048d6ed459be654090a838a" name="acd939b64a048d6ed459be654090a838a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd939b64a048d6ed459be654090a838a">&#9670;&#160;</a></span>FIREBASE_HOST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FIREBASE_HOST&#160;&#160;&#160;&quot;https://<a class="el" href="password__manager_8ino.html#acbd76b816d055b7a642c219fd9751020">password</a>-entries-default-rtdb.europe-west1.firebasedatabase.app/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Firebase database URL. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a7bea7c1d7f7a9d76e7c8fd383c1decff" name="a7bea7c1d7f7a9d76e7c8fd383c1decff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bea7c1d7f7a9d76e7c8fd383c1decff">&#9670;&#160;</a></span>checkCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks the entered code against the correct code. </p>
+
+</div>
+</div>
+<a id="ac14baada25fcf37c32a9a509436290d5" name="ac14baada25fcf37c32a9a509436290d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14baada25fcf37c32a9a509436290d5">&#9670;&#160;</a></span>checkConnection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkConnection </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks WiFi connection and attempts to reconnect if lost. </p>
+
+</div>
+</div>
 <a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
 
@@ -130,6 +317,27 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Main arduino loop function. This runs constantly and allows for user interaction. </p>
+
+</div>
+</div>
+<a id="a7c3170c26456d31621c93f0c6bfc5fa6" name="a7c3170c26456d31621c93f0c6bfc5fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3170c26456d31621c93f0c6bfc5fa6">&#9670;&#160;</a></span>resetSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetSystem </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the system state and clears selected numbers. </p>
 
 </div>
 </div>
@@ -147,6 +355,444 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Main arduino setup function responsible for initializing objects, pins, and hardware components. </p>
+
+</div>
+</div>
+<a id="a4eb9b74023d402af58366ad5ad39166d" name="a4eb9b74023d402af58366ad5ad39166d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb9b74023d402af58366ad5ad39166d">&#9670;&#160;</a></span>updateCorrectCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateCorrectCode </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the correct code by retrieving it from Firebase. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a176560937694baccc8a92ab840fafac1" name="a176560937694baccc8a92ab840fafac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a176560937694baccc8a92ab840fafac1">&#9670;&#160;</a></span>attemptsUsed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int attemptsUsed = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tracks the number of failed attempts. </p>
+
+</div>
+</div>
+<a id="a32ece16c872ffd44bb017caf3f7274d0" name="a32ece16c872ffd44bb017caf3f7274d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ece16c872ffd44bb017caf3f7274d0">&#9670;&#160;</a></span>boxID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String boxID = &quot;004&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BOX ID for Firebase. </p>
+
+</div>
+</div>
+<a id="a4ddb8b6ae564eb22f7c74f2683a63b8e" name="a4ddb8b6ae564eb22f7c74f2683a63b8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ddb8b6ae564eb22f7c74f2683a63b8e">&#9670;&#160;</a></span>buttonPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int buttonPin = 16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Button input pin. </p>
+
+</div>
+</div>
+<a id="a93f76f31c72aa926d2f7b28396056aaa" name="a93f76f31c72aa926d2f7b28396056aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f76f31c72aa926d2f7b28396056aaa">&#9670;&#160;</a></span>buzzer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_buzzer.html">Buzzer</a>* buzzer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_buzzer.html">Buzzer</a> object for sound notifications. </p>
+
+</div>
+</div>
+<a id="a988a608b186de34e793324aee3ec73ee" name="a988a608b186de34e793324aee3ec73ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988a608b186de34e793324aee3ec73ee">&#9670;&#160;</a></span>buzzerPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int buzzerPin = 15</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_buzzer.html">Buzzer</a> output pin. </p>
+
+</div>
+</div>
+<a id="aa21fa1997fedbd21fafc49cb97b2c000" name="aa21fa1997fedbd21fafc49cb97b2c000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21fa1997fedbd21fafc49cb97b2c000">&#9670;&#160;</a></span>codeIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int codeIndex = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tracks which digit the user is selecting. </p>
+
+</div>
+</div>
+<a id="a29b4551c4ed4171013bea56580274082" name="a29b4551c4ed4171013bea56580274082"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b4551c4ed4171013bea56580274082">&#9670;&#160;</a></span>correctCode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int correctCode[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Is there to contain the correct password. </p>
+
+</div>
+</div>
+<a id="a0e263faaf1f060856aa9d40a59ff6699" name="a0e263faaf1f060856aa9d40a59ff6699"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e263faaf1f060856aa9d40a59ff6699">&#9670;&#160;</a></span>firebase</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_firebase_handler.html">FirebaseHandler</a>* firebase</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_firebase_handler.html" title="A class to handle Firebase operations such as logging entries and managing passwords.">FirebaseHandler</a> object for Firebase operations. </p>
+
+</div>
+</div>
+<a id="ab7963092e6404e991860b9f0cd7b0f38" name="ab7963092e6404e991860b9f0cd7b0f38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7963092e6404e991860b9f0cd7b0f38">&#9670;&#160;</a></span>firstReading</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool firstReading = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flag to indicate if it is the first user input reading. Is used to ensure IDLE mode upon program start. </p>
+
+</div>
+</div>
+<a id="a12e0822e230092cca844cd048a9d6cd6" name="a12e0822e230092cca844cd048a9d6cd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e0822e230092cca844cd048a9d6cd6">&#9670;&#160;</a></span>greenLEDPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int greenLEDPin = 14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Green LED output pin. </p>
+
+</div>
+</div>
+<a id="aca6c3b0edf5cd2083b653e4b45b5be5f" name="aca6c3b0edf5cd2083b653e4b45b5be5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6c3b0edf5cd2083b653e4b45b5be5f">&#9670;&#160;</a></span>lastInteractionTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lastInteractionTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timestamp of the last interaction. </p>
+
+</div>
+</div>
+<a id="ab203b504762cfa71d6b2135830018fdb" name="ab203b504762cfa71d6b2135830018fdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab203b504762cfa71d6b2135830018fdb">&#9670;&#160;</a></span>lcd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_c_d_screen.html">LCDScreen</a>* lcd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LCD screen object. </p>
+
+</div>
+</div>
+<a id="a0e05d17205a66ab1ae96282b03141b95" name="a0e05d17205a66ab1ae96282b03141b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e05d17205a66ab1ae96282b03141b95">&#9670;&#160;</a></span>leds</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_l_e_ds.html">LEDs</a>* leds</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_l_e_ds.html" title="A class to manage and update the state of LEDs based on the given state.">LEDs</a> object for controlling the <a class="el" href="class_l_e_ds.html" title="A class to manage and update the state of LEDs based on the given state.">LEDs</a>. </p>
+
+</div>
+</div>
+<a id="acfa9c9efda64a4e435069767b5831eb7" name="acfa9c9efda64a4e435069767b5831eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfa9c9efda64a4e435069767b5831eb7">&#9670;&#160;</a></span>maxAttempts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int maxAttempts = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum allowed password attempts before access is denied. </p>
+
+</div>
+</div>
+<a id="a3bef28806edf8f4c8cb82584b7e8c3cb" name="a3bef28806edf8f4c8cb82584b7e8c3cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bef28806edf8f4c8cb82584b7e8c3cb">&#9670;&#160;</a></span>pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* pass = &quot;melekdeling&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wi-Fi password. </p>
+
+</div>
+</div>
+<a id="a0a59094bfd2721b201753dcc4aa5a7e0" name="a0a59094bfd2721b201753dcc4aa5a7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a59094bfd2721b201753dcc4aa5a7e0">&#9670;&#160;</a></span>potPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int potPin = A0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Potentiometer input pin. </p>
+
+</div>
+</div>
+<a id="a2a37a0731c2f8691dd9e3abf460fd1f9" name="a2a37a0731c2f8691dd9e3abf460fd1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a37a0731c2f8691dd9e3abf460fd1f9">&#9670;&#160;</a></span>redLEDPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int redLEDPin = 13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Red LED output pin. </p>
+
+</div>
+</div>
+<a id="a54e166222c3a796c071c800f76470384" name="a54e166222c3a796c071c800f76470384"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e166222c3a796c071c800f76470384">&#9670;&#160;</a></span>resetDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long resetDuration = 1800000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Duration after which the system resets due to inactivity (and resets attempt count). </p>
+
+</div>
+</div>
+<a id="a768ceffd92a156c2829e4af4d63260ad" name="a768ceffd92a156c2829e4af4d63260ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768ceffd92a156c2829e4af4d63260ad">&#9670;&#160;</a></span>selectedNumber</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int selectedNumber = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Current selected number from the potentiometer. </p>
+
+</div>
+</div>
+<a id="ad58c9e5ec6f1cc44e98f9e4279ad84bc" name="ad58c9e5ec6f1cc44e98f9e4279ad84bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad58c9e5ec6f1cc44e98f9e4279ad84bc">&#9670;&#160;</a></span>selectedNumbers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int selectedNumbers[4] = { -1, -1, -1, -1 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Array storing user input numbers. </p>
+
+</div>
+</div>
+<a id="a4160bb437c685a28cde6b624c2cc49dd" name="a4160bb437c685a28cde6b624c2cc49dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4160bb437c685a28cde6b624c2cc49dd">&#9670;&#160;</a></span>servoMotorPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int servoMotorPin = 2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Servo motor control pin. </p>
+
+</div>
+</div>
+<a id="a587ba0cb07f02913598610049a3bbb79" name="a587ba0cb07f02913598610049a3bbb79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a587ba0cb07f02913598610049a3bbb79">&#9670;&#160;</a></span>ssid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ssid = &quot;Melek&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wi-Fi SSID. </p>
+
+</div>
+</div>
+<a id="a0db44bec6a2ebf1a0cc819b5c9191cee" name="a0db44bec6a2ebf1a0cc819b5c9191cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db44bec6a2ebf1a0cc819b5c9191cee">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="constants_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a> state = <a class="el" href="constants_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8afd6a0e4343048b10646dd2976cc5ad18">IDLE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System state enum. </p>
+
+</div>
+</div>
+<a id="a13c36040fb5a8e7537db9eb933e919b5" name="a13c36040fb5a8e7537db9eb933e919b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c36040fb5a8e7537db9eb933e919b5">&#9670;&#160;</a></span>timeoutDuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long timeoutDuration = 60000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Timeout duration for inactivity. </p>
+
+</div>
+</div>
+<a id="a89c51929c72f18fd2437f857d4fba94e" name="a89c51929c72f18fd2437f857d4fba94e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c51929c72f18fd2437f857d4fba94e">&#9670;&#160;</a></span>wifiManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wi_fi_manager.html">WiFiManager</a>* wifiManager</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_wi_fi_manager.html" title="A class to manage WiFi connections on the ESP8266.">WiFiManager</a> object for handling the Wi-Fi connection. </p>
+
+</div>
+</div>
+<a id="a50c39ef3bde8de33d86422b2796af548" name="a50c39ef3bde8de33d86422b2796af548"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c39ef3bde8de33d86422b2796af548">&#9670;&#160;</a></span>yellowLEDPin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int yellowLEDPin = 12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Yellow LED output pin. </p>
 
 </div>
 </div>

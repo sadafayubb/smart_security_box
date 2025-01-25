@@ -1,0 +1,109 @@
+\doxysection{LCDScreen Class Reference}
+\hypertarget{class_l_c_d_screen}{}\label{class_l_c_d_screen}\index{LCDScreen@{LCDScreen}}
+
+
+Handles the LCD display for the Smart Security Box.  
+
+
+
+
+{\ttfamily \#include $<$LCD\+\_\+screen.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_l_c_d_screen_a81b8f49be0d69fb8df8b05f8a1c32d0d}{LCDScreen}} ()
+\begin{DoxyCompactList}\small\item\em Constructor\+: Initializes the LCD screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_c_d_screen_abbb719ee21a71603f2dfbc8acd42df3d}{print\+Line}} (String str, int line\+Number)
+\begin{DoxyCompactList}\small\item\em Prints a string to a specified line on the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_c_d_screen_a6383d7fcd6cb98e6a47c9380dc08ba95}{print\+Lines}} (String str1, String str2)
+\begin{DoxyCompactList}\small\item\em Prints two lines to the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_c_d_screen_a94e5a3597c98e25845ab43dfac47383e}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clears the LCD screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Liquid\+Crystal\+\_\+\+I2C \mbox{\hyperlink{class_l_c_d_screen_a5d23ff89340021f51cde9fac326f9996}{lcd}} = Liquid\+Crystal\+\_\+\+I2C(0x27, 16, 2)
+\begin{DoxyCompactList}\small\item\em Main LCD object from the Liquid\+Crystal\+\_\+\+I2C module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles the LCD display for the Smart Security Box. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_l_c_d_screen_a81b8f49be0d69fb8df8b05f8a1c32d0d}\index{LCDScreen@{LCDScreen}!LCDScreen@{LCDScreen}}
+\index{LCDScreen@{LCDScreen}!LCDScreen@{LCDScreen}}
+\doxysubsubsection{\texorpdfstring{LCDScreen()}{LCDScreen()}}
+{\footnotesize\ttfamily \label{class_l_c_d_screen_a81b8f49be0d69fb8df8b05f8a1c32d0d} 
+LCDScreen\+::\+LCDScreen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor\+: Initializes the LCD screen. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_c_d_screen_a94e5a3597c98e25845ab43dfac47383e}\index{LCDScreen@{LCDScreen}!clear@{clear}}
+\index{clear@{clear}!LCDScreen@{LCDScreen}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_l_c_d_screen_a94e5a3597c98e25845ab43dfac47383e} 
+void LCDScreen\+::clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears the LCD screen. 
+
+\Hypertarget{class_l_c_d_screen_abbb719ee21a71603f2dfbc8acd42df3d}\index{LCDScreen@{LCDScreen}!printLine@{printLine}}
+\index{printLine@{printLine}!LCDScreen@{LCDScreen}}
+\doxysubsubsection{\texorpdfstring{printLine()}{printLine()}}
+{\footnotesize\ttfamily \label{class_l_c_d_screen_abbb719ee21a71603f2dfbc8acd42df3d} 
+void LCDScreen\+::print\+Line (\begin{DoxyParamCaption}\item[{String}]{str}{, }\item[{int}]{line\+Number}{}\end{DoxyParamCaption})}
+
+
+
+Prints a string to a specified line on the LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be printed. \\
+\hline
+{\em line\+Number} & The line number (1-\/based) where the string should be printed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_l_c_d_screen_a6383d7fcd6cb98e6a47c9380dc08ba95}\index{LCDScreen@{LCDScreen}!printLines@{printLines}}
+\index{printLines@{printLines}!LCDScreen@{LCDScreen}}
+\doxysubsubsection{\texorpdfstring{printLines()}{printLines()}}
+{\footnotesize\ttfamily \label{class_l_c_d_screen_a6383d7fcd6cb98e6a47c9380dc08ba95} 
+void LCDScreen\+::print\+Lines (\begin{DoxyParamCaption}\item[{String}]{str1}{, }\item[{String}]{str2}{}\end{DoxyParamCaption})}
+
+
+
+Prints two lines to the LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str1} & The string to be printed to line 1. \\
+\hline
+{\em str2} & The string to be printed to line 2. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_l_c_d_screen_a5d23ff89340021f51cde9fac326f9996}\index{LCDScreen@{LCDScreen}!lcd@{lcd}}
+\index{lcd@{lcd}!LCDScreen@{LCDScreen}}
+\doxysubsubsection{\texorpdfstring{lcd}{lcd}}
+{\footnotesize\ttfamily \label{class_l_c_d_screen_a5d23ff89340021f51cde9fac326f9996} 
+Liquid\+Crystal\+\_\+\+I2C LCDScreen\+::lcd = Liquid\+Crystal\+\_\+\+I2C(0x27, 16, 2)}
+
+
+
+Main LCD object from the Liquid\+Crystal\+\_\+\+I2C module. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_l_c_d__screen_8h}{LCD\+\_\+screen.\+h}}\item 
+main/\mbox{\hyperlink{_l_c_d__screen_8cpp}{LCD\+\_\+screen.\+cpp}}\end{DoxyCompactItemize}

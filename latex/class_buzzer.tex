@@ -1,0 +1,141 @@
+\doxysection{Buzzer Class Reference}
+\hypertarget{class_buzzer}{}\label{class_buzzer}\index{Buzzer@{Buzzer}}
+
+
+{\ttfamily \#include $<$Buzzer.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_buzzer_aee99c35b96fe8831db440ac058a09bc3}{Buzzer}} (uint8\+\_\+t \mbox{\hyperlink{class_buzzer_a1c760486f47086d78540b03e694c1e2b}{pin}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_buzzer}{Buzzer} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_a8367ffe7577a328ce1a2427e5c0f1889}{tone\+On}} (float frequency)
+\begin{DoxyCompactList}\small\item\em Turns on the buzzer with a specified frequency. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_a8c2b464f20fd232b70580fde8741f184}{tone\+Off}} ()
+\begin{DoxyCompactList}\small\item\em Turns off the buzzer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_a76ca03bc77208dd6efa2c8e60d5a8d82}{number\+Selected}} ()
+\begin{DoxyCompactList}\small\item\em Plays a short beep when a number is selected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_ae5d3f35c5c281c26937d9bedc81487ad}{wrong\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Plays an error sound for a wrong password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_aa40fcdab431c4081444b0114f23d2845}{correct\+Password}} ()
+\begin{DoxyCompactList}\small\item\em Plays a melody indicating a correct password. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_a2d76038ff614e5ad2df047d0a50553ca}{box\+Close}} ()
+\begin{DoxyCompactList}\small\item\em Plays a double beep when the box is closed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_buzzer_a1fdf86626ea6e25c5f29ad09bf2be72d}{access\+Denied}} ()
+\begin{DoxyCompactList}\small\item\em Plays a continuous alarm sound when access is denied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{class_buzzer_a1c760486f47086d78540b03e694c1e2b}{pin}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_buzzer_aee99c35b96fe8831db440ac058a09bc3}\index{Buzzer@{Buzzer}!Buzzer@{Buzzer}}
+\index{Buzzer@{Buzzer}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{Buzzer()}{Buzzer()}}
+{\footnotesize\ttfamily \label{class_buzzer_aee99c35b96fe8831db440ac058a09bc3} 
+Buzzer\+::\+Buzzer (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_buzzer}{Buzzer} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin connected to the buzzer. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_buzzer_a1fdf86626ea6e25c5f29ad09bf2be72d}\index{Buzzer@{Buzzer}!accessDenied@{accessDenied}}
+\index{accessDenied@{accessDenied}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{accessDenied()}{accessDenied()}}
+{\footnotesize\ttfamily \label{class_buzzer_a1fdf86626ea6e25c5f29ad09bf2be72d} 
+void Buzzer\+::access\+Denied (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays a continuous alarm sound when access is denied. 
+
+\Hypertarget{class_buzzer_a2d76038ff614e5ad2df047d0a50553ca}\index{Buzzer@{Buzzer}!boxClose@{boxClose}}
+\index{boxClose@{boxClose}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{boxClose()}{boxClose()}}
+{\footnotesize\ttfamily \label{class_buzzer_a2d76038ff614e5ad2df047d0a50553ca} 
+void Buzzer\+::box\+Close (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays a double beep when the box is closed. 
+
+\Hypertarget{class_buzzer_aa40fcdab431c4081444b0114f23d2845}\index{Buzzer@{Buzzer}!correctPassword@{correctPassword}}
+\index{correctPassword@{correctPassword}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{correctPassword()}{correctPassword()}}
+{\footnotesize\ttfamily \label{class_buzzer_aa40fcdab431c4081444b0114f23d2845} 
+void Buzzer\+::correct\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays a melody indicating a correct password. 
+
+\Hypertarget{class_buzzer_a76ca03bc77208dd6efa2c8e60d5a8d82}\index{Buzzer@{Buzzer}!numberSelected@{numberSelected}}
+\index{numberSelected@{numberSelected}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{numberSelected()}{numberSelected()}}
+{\footnotesize\ttfamily \label{class_buzzer_a76ca03bc77208dd6efa2c8e60d5a8d82} 
+void Buzzer\+::number\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays a short beep when a number is selected. 
+
+\Hypertarget{class_buzzer_a8c2b464f20fd232b70580fde8741f184}\index{Buzzer@{Buzzer}!toneOff@{toneOff}}
+\index{toneOff@{toneOff}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{toneOff()}{toneOff()}}
+{\footnotesize\ttfamily \label{class_buzzer_a8c2b464f20fd232b70580fde8741f184} 
+void Buzzer\+::tone\+Off (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Turns off the buzzer. 
+
+\Hypertarget{class_buzzer_a8367ffe7577a328ce1a2427e5c0f1889}\index{Buzzer@{Buzzer}!toneOn@{toneOn}}
+\index{toneOn@{toneOn}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{toneOn()}{toneOn()}}
+{\footnotesize\ttfamily \label{class_buzzer_a8367ffe7577a328ce1a2427e5c0f1889} 
+void Buzzer\+::tone\+On (\begin{DoxyParamCaption}\item[{float}]{frequency}{}\end{DoxyParamCaption})}
+
+
+
+Turns on the buzzer with a specified frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & The frequency of the tone in Hz. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_buzzer_ae5d3f35c5c281c26937d9bedc81487ad}\index{Buzzer@{Buzzer}!wrongPassword@{wrongPassword}}
+\index{wrongPassword@{wrongPassword}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{wrongPassword()}{wrongPassword()}}
+{\footnotesize\ttfamily \label{class_buzzer_ae5d3f35c5c281c26937d9bedc81487ad} 
+void Buzzer\+::wrong\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Plays an error sound for a wrong password. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_buzzer_a1c760486f47086d78540b03e694c1e2b}\index{Buzzer@{Buzzer}!pin@{pin}}
+\index{pin@{pin}!Buzzer@{Buzzer}}
+\doxysubsubsection{\texorpdfstring{pin}{pin}}
+{\footnotesize\ttfamily \label{class_buzzer_a1c760486f47086d78540b03e694c1e2b} 
+uint8\+\_\+t Buzzer\+::pin}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_buzzer_8h}{Buzzer.\+h}}\item 
+main/\mbox{\hyperlink{_buzzer_8cpp}{Buzzer.\+cpp}}\end{DoxyCompactItemize}

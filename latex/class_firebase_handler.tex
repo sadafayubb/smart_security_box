@@ -1,0 +1,106 @@
+\doxysection{Firebase\+Handler Class Reference}
+\hypertarget{class_firebase_handler}{}\label{class_firebase_handler}\index{FirebaseHandler@{FirebaseHandler}}
+
+
+A class to handle Firebase operations such as logging entries and managing passwords.  
+
+
+
+
+{\ttfamily \#include $<$Firebase\+Handler.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_firebase_handler_a1b8aa0de3746f3d72addf72a2e080930}{Firebase\+Handler}} (const String \&host, const String \&auth)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_firebase_handler}{Firebase\+Handler} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_firebase_handler_acd037fcb5e674c4effcf69fb8142b3c9}{log\+Entry}} (const String \&\mbox{\hyperlink{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}{box\+ID}}, const String \&entry\+Status)
+\begin{DoxyCompactList}\small\item\em Logs an entry status to Firebase under the specified box ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_firebase_handler_a16e8b9626bebd26bae07e85c9d9aa443}{save\+Password}} (const String \&\mbox{\hyperlink{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}{box\+ID}}, const String \&\mbox{\hyperlink{password__manager_8ino_acbd76b816d055b7a642c219fd9751020}{password}})
+\begin{DoxyCompactList}\small\item\em Saves a password to Firebase under the specified box ID. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{class_firebase_handler_aba2e45d79ebbceb1c5b18cb65f1753f0}{get\+Password}} (const String \&user\+ID)
+\begin{DoxyCompactList}\small\item\em Retrieves the password associated with the given user ID from Firebase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to handle Firebase operations such as logging entries and managing passwords. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_firebase_handler_a1b8aa0de3746f3d72addf72a2e080930}\index{FirebaseHandler@{FirebaseHandler}!FirebaseHandler@{FirebaseHandler}}
+\index{FirebaseHandler@{FirebaseHandler}!FirebaseHandler@{FirebaseHandler}}
+\doxysubsubsection{\texorpdfstring{FirebaseHandler()}{FirebaseHandler()}}
+{\footnotesize\ttfamily \label{class_firebase_handler_a1b8aa0de3746f3d72addf72a2e080930} 
+Firebase\+Handler\+::\+Firebase\+Handler (\begin{DoxyParamCaption}\item[{const String \&}]{host}{, }\item[{const String \&}]{auth}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_firebase_handler}{Firebase\+Handler} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & The Firebase host URL. \\
+\hline
+{\em auth} & The Firebase authentication token. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_firebase_handler_aba2e45d79ebbceb1c5b18cb65f1753f0}\index{FirebaseHandler@{FirebaseHandler}!getPassword@{getPassword}}
+\index{getPassword@{getPassword}!FirebaseHandler@{FirebaseHandler}}
+\doxysubsubsection{\texorpdfstring{getPassword()}{getPassword()}}
+{\footnotesize\ttfamily \label{class_firebase_handler_aba2e45d79ebbceb1c5b18cb65f1753f0} 
+String Firebase\+Handler\+::get\+Password (\begin{DoxyParamCaption}\item[{const String \&}]{user\+ID}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the password associated with the given user ID from Firebase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+ID} & The ID of the user whose password is to be retrieved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The retrieved password as a string. Returns an empty string if the operation fails. 
+\end{DoxyReturn}
+\Hypertarget{class_firebase_handler_acd037fcb5e674c4effcf69fb8142b3c9}\index{FirebaseHandler@{FirebaseHandler}!logEntry@{logEntry}}
+\index{logEntry@{logEntry}!FirebaseHandler@{FirebaseHandler}}
+\doxysubsubsection{\texorpdfstring{logEntry()}{logEntry()}}
+{\footnotesize\ttfamily \label{class_firebase_handler_acd037fcb5e674c4effcf69fb8142b3c9} 
+void Firebase\+Handler\+::log\+Entry (\begin{DoxyParamCaption}\item[{const String \&}]{box\+ID}{, }\item[{const String \&}]{entry\+Status}{}\end{DoxyParamCaption})}
+
+
+
+Logs an entry status to Firebase under the specified box ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+ID} & The ID of the lockbox. \\
+\hline
+{\em entry\+Status} & The status to log (e.\+g., "{}\+Unlocked"{}, "{}\+Failed Attempt"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_firebase_handler_a16e8b9626bebd26bae07e85c9d9aa443}\index{FirebaseHandler@{FirebaseHandler}!savePassword@{savePassword}}
+\index{savePassword@{savePassword}!FirebaseHandler@{FirebaseHandler}}
+\doxysubsubsection{\texorpdfstring{savePassword()}{savePassword()}}
+{\footnotesize\ttfamily \label{class_firebase_handler_a16e8b9626bebd26bae07e85c9d9aa443} 
+void Firebase\+Handler\+::save\+Password (\begin{DoxyParamCaption}\item[{const String \&}]{box\+ID}{, }\item[{const String \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Saves a password to Firebase under the specified box ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box\+ID} & The ID of the lockbox. \\
+\hline
+{\em password} & The password to save. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_firebase_handler_8h}{Firebase\+Handler.\+h}}\item 
+main/\mbox{\hyperlink{_firebase_handler_8cpp}{Firebase\+Handler.\+cpp}}\end{DoxyCompactItemize}

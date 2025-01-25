@@ -1,0 +1,179 @@
+\doxysection{main/\+LCD\+\_\+screen.cpp File Reference}
+\hypertarget{_l_c_d__screen_8cpp}{}\label{_l_c_d__screen_8cpp}\index{main/LCD\_screen.cpp@{main/LCD\_screen.cpp}}
+{\ttfamily \#include "{}LCD\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}Arduino.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{_l_c_d__screen_8cpp_a62b5ba1ffbb134e0466e03fb92cbb9fa}{\+\_\+code\+To\+String}} (const int code\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Converts the code array into a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d__screen_8cpp_a570c0a382f99af15bc82ded81e3ae271}{update\+Box\+LCD}} (\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8ino_ab203b504762cfa71d6b2135830018fdb}{lcd}}, enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}}, int code\mbox{[}$\,$\mbox{]}, int current\+Digit)
+\begin{DoxyCompactList}\small\item\em Updates the LCD screen based on the current state and inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a8cfdc16442939d53af08362a274dead7}{idle\+Line1}} = "{} Smart Security"{}
+\begin{DoxyCompactList}\small\item\em First line displayed when the box is in idle state. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a15ff5948a8a4c4a26744689fb47c064f}{idle\+Line2}} = "{} Box"{}
+\begin{DoxyCompactList}\small\item\em Second line displayed when the box is in idle state. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a3057ab1300a30169973a10cad5ce3fff}{access\+Denied\+Line1}} = "{}ACCESS DENIED!"{}
+\begin{DoxyCompactList}\small\item\em First line displayed when access is denied. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a88b6c7096d0887df375024c758572397}{access\+Denied\+Line2}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Second line displayed when access is denied. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_aa5e32d4855463008bb7f89f509e35b3d}{correct\+Password\+Line1}} = "{}ACCESS GRANTED!"{}
+\begin{DoxyCompactList}\small\item\em First line displayed when the correct password is entered. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a2763ae6a2acee9c2b39b0d9062f1b6b4}{correct\+Password\+Line2}} = "{}-\/-\/$>$ OPEN BOX $<$-\/-\/"{}
+\begin{DoxyCompactList}\small\item\em Second line displayed when the correct password is entered. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a2fcb7105250a268b5e12a1ec1bddf77f}{wrong\+Password\+Line1}} = "{}WRONG PASSWORD!"{}
+\begin{DoxyCompactList}\small\item\em First line displayed when the wrong password is entered. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_ae4c8e7caf87a1d554c2b32fb7f0fa70b}{wrong\+Password\+Line2}} = "{}"{}
+\begin{DoxyCompactList}\small\item\em Second line displayed when the wrong password is entered. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a65b4e136e7496a63db4b2c0012ea4dc5}{box\+Open\+Line1}} = "{} BOX IS OPEN"{}
+\begin{DoxyCompactList}\small\item\em First line displayed when the box is open. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_l_c_d__screen_8cpp_a9acac41e582fccb18a11ef5f2e093d1a}{box\+Open\+Line2}} = "{}-\/$>$ CLOSE DOOR $<$-\/"{}
+\begin{DoxyCompactList}\small\item\em Second line displayed when the box is open. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_c_d__screen_8cpp_a62b5ba1ffbb134e0466e03fb92cbb9fa}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!\_codeToString@{\_codeToString}}
+\index{\_codeToString@{\_codeToString}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{\_codeToString()}{\_codeToString()}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a62b5ba1ffbb134e0466e03fb92cbb9fa} 
+String \+\_\+code\+To\+String (\begin{DoxyParamCaption}\item[{const int}]{code}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Converts the code array into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The integer array representing the code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The code as a string. 
+\end{DoxyReturn}
+\Hypertarget{_l_c_d__screen_8cpp_a570c0a382f99af15bc82ded81e3ae271}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!updateBoxLCD@{updateBoxLCD}}
+\index{updateBoxLCD@{updateBoxLCD}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{updateBoxLCD()}{updateBoxLCD()}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a570c0a382f99af15bc82ded81e3ae271} 
+void update\+Box\+LCD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}}]{lcd}{, }\item[{enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}]{state}{, }\item[{int}]{code}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{current\+Digit}{}\end{DoxyParamCaption})}
+
+
+
+Updates the LCD screen based on the current state and inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcd} & The Liquid\+Crystal\+\_\+\+I2C object controlling the display. \\
+\hline
+{\em state} & The current state of the system. \\
+\hline
+{\em code} & The code being entered or displayed. \\
+\hline
+{\em current\+Digit} & The current digit being modified. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_l_c_d__screen_8cpp_a3057ab1300a30169973a10cad5ce3fff}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!accessDeniedLine1@{accessDeniedLine1}}
+\index{accessDeniedLine1@{accessDeniedLine1}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{accessDeniedLine1}{accessDeniedLine1}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a3057ab1300a30169973a10cad5ce3fff} 
+const char\texorpdfstring{$\ast$}{*} access\+Denied\+Line1 = "{}ACCESS DENIED!"{}}
+
+
+
+First line displayed when access is denied. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a88b6c7096d0887df375024c758572397}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!accessDeniedLine2@{accessDeniedLine2}}
+\index{accessDeniedLine2@{accessDeniedLine2}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{accessDeniedLine2}{accessDeniedLine2}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a88b6c7096d0887df375024c758572397} 
+const char\texorpdfstring{$\ast$}{*} access\+Denied\+Line2 = "{}"{}}
+
+
+
+Second line displayed when access is denied. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a65b4e136e7496a63db4b2c0012ea4dc5}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!boxOpenLine1@{boxOpenLine1}}
+\index{boxOpenLine1@{boxOpenLine1}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{boxOpenLine1}{boxOpenLine1}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a65b4e136e7496a63db4b2c0012ea4dc5} 
+const char\texorpdfstring{$\ast$}{*} box\+Open\+Line1 = "{} BOX IS OPEN"{}}
+
+
+
+First line displayed when the box is open. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a9acac41e582fccb18a11ef5f2e093d1a}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!boxOpenLine2@{boxOpenLine2}}
+\index{boxOpenLine2@{boxOpenLine2}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{boxOpenLine2}{boxOpenLine2}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a9acac41e582fccb18a11ef5f2e093d1a} 
+const char\texorpdfstring{$\ast$}{*} box\+Open\+Line2 = "{}-\/$>$ CLOSE DOOR $<$-\/"{}}
+
+
+
+Second line displayed when the box is open. 
+
+\Hypertarget{_l_c_d__screen_8cpp_aa5e32d4855463008bb7f89f509e35b3d}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!correctPasswordLine1@{correctPasswordLine1}}
+\index{correctPasswordLine1@{correctPasswordLine1}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{correctPasswordLine1}{correctPasswordLine1}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_aa5e32d4855463008bb7f89f509e35b3d} 
+const char\texorpdfstring{$\ast$}{*} correct\+Password\+Line1 = "{}ACCESS GRANTED!"{}}
+
+
+
+First line displayed when the correct password is entered. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a2763ae6a2acee9c2b39b0d9062f1b6b4}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!correctPasswordLine2@{correctPasswordLine2}}
+\index{correctPasswordLine2@{correctPasswordLine2}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{correctPasswordLine2}{correctPasswordLine2}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a2763ae6a2acee9c2b39b0d9062f1b6b4} 
+const char\texorpdfstring{$\ast$}{*} correct\+Password\+Line2 = "{}-\/-\/$>$ OPEN BOX $<$-\/-\/"{}}
+
+
+
+Second line displayed when the correct password is entered. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a8cfdc16442939d53af08362a274dead7}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!idleLine1@{idleLine1}}
+\index{idleLine1@{idleLine1}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{idleLine1}{idleLine1}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a8cfdc16442939d53af08362a274dead7} 
+const char\texorpdfstring{$\ast$}{*} idle\+Line1 = "{} Smart Security"{}}
+
+
+
+First line displayed when the box is in idle state. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a15ff5948a8a4c4a26744689fb47c064f}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!idleLine2@{idleLine2}}
+\index{idleLine2@{idleLine2}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{idleLine2}{idleLine2}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a15ff5948a8a4c4a26744689fb47c064f} 
+const char\texorpdfstring{$\ast$}{*} idle\+Line2 = "{} Box"{}}
+
+
+
+Second line displayed when the box is in idle state. 
+
+\Hypertarget{_l_c_d__screen_8cpp_a2fcb7105250a268b5e12a1ec1bddf77f}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!wrongPasswordLine1@{wrongPasswordLine1}}
+\index{wrongPasswordLine1@{wrongPasswordLine1}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{wrongPasswordLine1}{wrongPasswordLine1}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_a2fcb7105250a268b5e12a1ec1bddf77f} 
+const char\texorpdfstring{$\ast$}{*} wrong\+Password\+Line1 = "{}WRONG PASSWORD!"{}}
+
+
+
+First line displayed when the wrong password is entered. 
+
+\Hypertarget{_l_c_d__screen_8cpp_ae4c8e7caf87a1d554c2b32fb7f0fa70b}\index{LCD\_screen.cpp@{LCD\_screen.cpp}!wrongPasswordLine2@{wrongPasswordLine2}}
+\index{wrongPasswordLine2@{wrongPasswordLine2}!LCD\_screen.cpp@{LCD\_screen.cpp}}
+\doxysubsubsection{\texorpdfstring{wrongPasswordLine2}{wrongPasswordLine2}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8cpp_ae4c8e7caf87a1d554c2b32fb7f0fa70b} 
+const char\texorpdfstring{$\ast$}{*} wrong\+Password\+Line2 = "{}"{}}
+
+
+
+Second line displayed when the wrong password is entered. 
+

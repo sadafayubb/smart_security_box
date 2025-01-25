@@ -107,6 +107,9 @@ $(function(){initNavTree('motor__module_8h.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">motor_module.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Declaration of functions for controlling the servo motor used in the locking mechanism.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;Servo.h&gt;</code><br />
 </div>
 <p><a href="motor__module_8h_source.html">Go to the source code of this file.</a></p>
@@ -114,11 +117,15 @@ $(function(){initNavTree('motor__module_8h.html',''); initResizable(true); });
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa8725e915ced77861b8bc752067b2231" id="r_aa8725e915ced77861b8bc752067b2231"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8725e915ced77861b8bc752067b2231">setupMotor</a> (int pin)</td></tr>
+<tr class="memdesc:aa8725e915ced77861b8bc752067b2231"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Library for controlling servo motors.  <br /></td></tr>
 <tr class="separator:aa8725e915ced77861b8bc752067b2231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a673bf0a34ca967c35afdda34d7317898" id="r_a673bf0a34ca967c35afdda34d7317898"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a673bf0a34ca967c35afdda34d7317898">setLock</a> (bool accessGranted)</td></tr>
+<tr class="memdesc:a673bf0a34ca967c35afdda34d7317898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the lock state of the motor based on access status.  <br /></td></tr>
 <tr class="separator:a673bf0a34ca967c35afdda34d7317898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Declaration of functions for controlling the servo motor used in the locking mechanism. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a673bf0a34ca967c35afdda34d7317898" name="a673bf0a34ca967c35afdda34d7317898"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a673bf0a34ca967c35afdda34d7317898">&#9670;&#160;</a></span>setLock()</h2>
 
@@ -133,6 +140,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Controls the lock state of the motor based on access status. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accessGranted</td><td>A boolean value indicating whether access is granted (true to unlock, false to lock).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Controls the lock state of the motor based on access status.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accessGranted</td><td>A boolean value indicating whether access is granted (true to unlock, false to lock). </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Unlock position (angle 170 degrees).</p>
+<p>&lt; Lock position (angle 0 degrees).</p>
 
 </div>
 </div>
@@ -150,6 +174,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>&lt; Library for controlling servo motors. </p>
+<p>Initializes the servo motor by attaching it to the specified pin. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>The GPIO pin to which the servo motor is connected.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>&lt; Library for controlling servo motors.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pin</td><td>The GPIO pin to which the servo motor is connected. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

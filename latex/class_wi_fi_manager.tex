@@ -1,0 +1,64 @@
+\doxysection{Wi\+Fi\+Manager Class Reference}
+\hypertarget{class_wi_fi_manager}{}\label{class_wi_fi_manager}\index{WiFiManager@{WiFiManager}}
+
+
+A class to manage Wi\+Fi connections on the ESP8266.  
+
+
+
+
+{\ttfamily \#include $<$Wi\+Fi\+Manager.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_wi_fi_manager_abedddb9bf16b0c41afca16825f7ed11c}{Wi\+Fi\+Manager}} (const char \texorpdfstring{$\ast$}{*}ssid, const char \texorpdfstring{$\ast$}{*}password)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_wi_fi_manager}{Wi\+Fi\+Manager} object with the given network credentials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_wi_fi_manager_a83b11aa403703977c5c968696b56cc15}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Connects to the Wi\+Fi network using the provided credentials. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage Wi\+Fi connections on the ESP8266. 
+
+\texorpdfstring{$<$}{<} Arduino core library. Library for managing Wi\+Fi connections on the ESP8266 module. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_wi_fi_manager_abedddb9bf16b0c41afca16825f7ed11c}\index{WiFiManager@{WiFiManager}!WiFiManager@{WiFiManager}}
+\index{WiFiManager@{WiFiManager}!WiFiManager@{WiFiManager}}
+\doxysubsubsection{\texorpdfstring{WiFiManager()}{WiFiManager()}}
+{\footnotesize\ttfamily \label{class_wi_fi_manager_abedddb9bf16b0c41afca16825f7ed11c} 
+Wi\+Fi\+Manager\+::\+Wi\+Fi\+Manager (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{ssid}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_wi_fi_manager}{Wi\+Fi\+Manager} object with the given network credentials. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ssid} & The SSID of the Wi\+Fi network. \\
+\hline
+{\em password} & The password of the Wi\+Fi network. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_wi_fi_manager_a83b11aa403703977c5c968696b56cc15}\index{WiFiManager@{WiFiManager}!connect@{connect}}
+\index{connect@{connect}!WiFiManager@{WiFiManager}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily \label{class_wi_fi_manager_a83b11aa403703977c5c968696b56cc15} 
+void Wi\+Fi\+Manager\+::connect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Connects to the Wi\+Fi network using the provided credentials. 
+
+This method attempts to establish a Wi\+Fi connection by continuously checking the connection status and prints the connection progress to the serial console.
+
+This function attempts to connect to the specified Wi\+Fi network and blocks until the connection is established. Progress is logged to the serial console. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_wi_fi_manager_8h}{Wi\+Fi\+Manager.\+h}}\item 
+main/\mbox{\hyperlink{_wi_fi_manager_8cpp}{Wi\+Fi\+Manager.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\doxysection{main/potentiometer.h File Reference}
+\hypertarget{potentiometer_8h}{}\label{potentiometer_8h}\index{main/potentiometer.h@{main/potentiometer.h}}
+{\ttfamily \#include "{}Arduino.\+h"{}}\newline
+{\ttfamily \#include "{}LCD\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+{\ttfamily \#include "{}Buzzer.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{potentiometer_8h_ae20f55cb8ac986d6c0e4a103b30739f9}{read\+Analog\+Value}} (int \mbox{\hyperlink{main_8ino_a0a59094bfd2721b201753dcc4aa5a7e0}{pot\+Pin}})
+\begin{DoxyCompactList}\small\item\em Reads the analog value from the potentiometer pin (A0) and maps it to a digit. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{potentiometer_8h_a80c7dfefac464b93e8941b23b0521ceb}{choose\+Number}} (unsigned long \&\mbox{\hyperlink{main_8ino_aca6c3b0edf5cd2083b653e4b45b5be5f}{last\+Interaction\+Time}}, \mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8ino_ab203b504762cfa71d6b2135830018fdb}{lcd}}, enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}}, int \mbox{\hyperlink{main_8ino_ad58c9e5ec6f1cc44e98f9e4279ad84bc}{selected\+Numbers}}\mbox{[}$\,$\mbox{]}, int \mbox{\hyperlink{main_8ino_a768ceffd92a156c2829e4af4d63260ad}{selected\+Number}}, int \mbox{\hyperlink{main_8ino_aa21fa1997fedbd21fafc49cb97b2c000}{code\+Index}}, \mbox{\hyperlink{class_buzzer}{Buzzer}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8ino_a93f76f31c72aa926d2f7b28396056aaa}{buzzer}}, int \mbox{\hyperlink{main_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}{button\+Pin}}, int \mbox{\hyperlink{main_8ino_a0a59094bfd2721b201753dcc4aa5a7e0}{pot\+Pin}}, bool \mbox{\hyperlink{main_8ino_ab7963092e6404e991860b9f0cd7b0f38}{first\+Reading}})
+\begin{DoxyCompactList}\small\item\em Handles number selection using the potentiometer and the button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{potentiometer_8h_a80c7dfefac464b93e8941b23b0521ceb}\index{potentiometer.h@{potentiometer.h}!chooseNumber@{chooseNumber}}
+\index{chooseNumber@{chooseNumber}!potentiometer.h@{potentiometer.h}}
+\doxysubsubsection{\texorpdfstring{chooseNumber()}{chooseNumber()}}
+{\footnotesize\ttfamily \label{potentiometer_8h_a80c7dfefac464b93e8941b23b0521ceb} 
+void choose\+Number (\begin{DoxyParamCaption}\item[{unsigned long \&}]{last\+Interaction\+Time}{, }\item[{\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}}]{lcd}{, }\item[{enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}]{state}{, }\item[{int}]{selected\+Numbers}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{selected\+Number}{, }\item[{int}]{code\+Index}{, }\item[{\mbox{\hyperlink{class_buzzer}{Buzzer}} \texorpdfstring{$\ast$}{*}}]{buzzer}{, }\item[{int}]{button\+Pin}{, }\item[{int}]{pot\+Pin}{, }\item[{bool}]{first\+Reading}{}\end{DoxyParamCaption})}
+
+
+
+Handles number selection using the potentiometer and the button. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em last\+Interaction\+Time} & Reference to the last interaction time for inactivity tracking. \\
+\hline
+{\em lcd} & The LCD screen object for display updates. \\
+\hline
+{\em state} & The current state of the Box system. \\
+\hline
+{\em selected\+Numbers} & The selected numbers (so far). \\
+\hline
+{\em selected\+Number} & The number currently selected with the potentiometer. \\
+\hline
+{\em code\+Index} & The current index in the selected numbers array. \\
+\hline
+{\em buzzer} & The buzzer object for making sound. \\
+\hline
+{\em button\+Pin} & The pin connected to the button. \\
+\hline
+{\em pot\+Pin} & The analog pin connected to the potentiometer. \\
+\hline
+{\em first\+Reading} & Boolean flag to handle initial reading correction. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{potentiometer_8h_ae20f55cb8ac986d6c0e4a103b30739f9}\index{potentiometer.h@{potentiometer.h}!readAnalogValue@{readAnalogValue}}
+\index{readAnalogValue@{readAnalogValue}!potentiometer.h@{potentiometer.h}}
+\doxysubsubsection{\texorpdfstring{readAnalogValue()}{readAnalogValue()}}
+{\footnotesize\ttfamily \label{potentiometer_8h_ae20f55cb8ac986d6c0e4a103b30739f9} 
+int read\+Analog\+Value (\begin{DoxyParamCaption}\item[{int}]{pot\+Pin}{}\end{DoxyParamCaption})}
+
+
+
+Reads the analog value from the potentiometer pin (A0) and maps it to a digit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pot\+Pin} & The analog pin connected to the potentiometer (A0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mapped digit (0-\/9) based on the potentiometer reading. 
+\end{DoxyReturn}

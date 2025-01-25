@@ -1,0 +1,28 @@
+\doxysection{Firebase\+Handler.\+h}
+\hypertarget{_firebase_handler_8h_source}{}\label{_firebase_handler_8h_source}\index{main/FirebaseHandler.h@{main/FirebaseHandler.h}}
+\mbox{\hyperlink{_firebase_handler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ FIREBASEHANDLER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ FIREBASEHANDLER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <Firebase.h>}\ \ \textcolor{comment}{//\ Include\ Firebase\ library}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_firebase_handler_a1b8aa0de3746f3d72addf72a2e080930}{FirebaseHandler}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_firebase_handler_a1b8aa0de3746f3d72addf72a2e080930}{FirebaseHandler}}(\textcolor{keyword}{const}\ String\&\ host,\ \textcolor{keyword}{const}\ String\&\ auth);}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firebase_handler_acd037fcb5e674c4effcf69fb8142b3c9}{logEntry}}(\textcolor{keyword}{const}\ String\&\ \mbox{\hyperlink{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}{boxID}},\ \textcolor{keyword}{const}\ String\&\ entryStatus);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_firebase_handler_a16e8b9626bebd26bae07e85c9d9aa443}{savePassword}}(\textcolor{keyword}{const}\ String\&\ \mbox{\hyperlink{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}{boxID}},\ \textcolor{keyword}{const}\ String\&\ \mbox{\hyperlink{password__manager_8ino_acbd76b816d055b7a642c219fd9751020}{password}});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ String\ \mbox{\hyperlink{class_firebase_handler_aba2e45d79ebbceb1c5b18cb65f1753f0}{getPassword}}(\textcolor{keyword}{const}\ String\&\ userID);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ Firebase\ firebase;\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FIREBASEHANDLER\_H}}
+
+\end{DoxyCode}

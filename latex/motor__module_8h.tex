@@ -1,13 +1,23 @@
 \doxysection{main/motor\+\_\+module.h File Reference}
 \hypertarget{motor__module_8h}{}\label{motor__module_8h}\index{main/motor\_module.h@{main/motor\_module.h}}
+
+
+Declaration of functions for controlling the servo motor used in the locking mechanism.  
+
+
 {\ttfamily \#include $<$Servo.\+h$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{motor__module_8h_aa8725e915ced77861b8bc752067b2231}{setup\+Motor}} (int pin)
-\item 
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Library for controlling servo motors. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{motor__module_8h_a673bf0a34ca967c35afdda34d7317898}{set\+Lock}} (bool access\+Granted)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Controls the lock state of the motor based on access status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declaration of functions for controlling the servo motor used in the locking mechanism. 
+
 
 
 \doxysubsection{Function Documentation}
@@ -17,9 +27,43 @@ void \mbox{\hyperlink{motor__module_8h_a673bf0a34ca967c35afdda34d7317898}{set\+L
 {\footnotesize\ttfamily \label{motor__module_8h_a673bf0a34ca967c35afdda34d7317898} 
 void set\+Lock (\begin{DoxyParamCaption}\item[{bool}]{access\+Granted}{}\end{DoxyParamCaption})}
 
-\Hypertarget{motor__module_8h_aa8725e915ced77861b8bc752067b2231}\index{motor\_module.h@{motor\_module.h}!setupMotor@{setupMotor}}
+
+
+Controls the lock state of the motor based on access status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em access\+Granted} & A boolean value indicating whether access is granted (true to unlock, false to lock).\\
+\hline
+\end{DoxyParams}
+Controls the lock state of the motor based on access status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em access\+Granted} & A boolean value indicating whether access is granted (true to unlock, false to lock). \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Unlock position (angle 170 degrees).
+
+\texorpdfstring{$<$}{<} Lock position (angle 0 degrees).\Hypertarget{motor__module_8h_aa8725e915ced77861b8bc752067b2231}\index{motor\_module.h@{motor\_module.h}!setupMotor@{setupMotor}}
 \index{setupMotor@{setupMotor}!motor\_module.h@{motor\_module.h}}
 \doxysubsubsection{\texorpdfstring{setupMotor()}{setupMotor()}}
 {\footnotesize\ttfamily \label{motor__module_8h_aa8725e915ced77861b8bc752067b2231} 
 void setup\+Motor (\begin{DoxyParamCaption}\item[{int}]{pin}{}\end{DoxyParamCaption})}
 
+
+
+\texorpdfstring{$<$}{<} Library for controlling servo motors. 
+
+Initializes the servo motor by attaching it to the specified pin. 
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the servo motor is connected.\\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Library for controlling servo motors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the servo motor is connected. \\
+\hline
+\end{DoxyParams}

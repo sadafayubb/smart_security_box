@@ -1,24 +1,438 @@
 \doxysection{main/main.ino File Reference}
 \hypertarget{main_8ino}{}\label{main_8ino}\index{main/main.ino@{main/main.ino}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include "{}buzzer.\+h"{}}\newline
+{\ttfamily \#include "{}LCD\+\_\+screen.\+h"{}}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+{\ttfamily \#include "{}motor\+\_\+module.\+h"{}}\newline
+{\ttfamily \#include "{}LEDs.\+h"{}}\newline
+{\ttfamily \#include $<$Firebase.\+h$>$}\newline
+{\ttfamily \#include "{}Firebase\+Handler.\+h"{}}\newline
+{\ttfamily \#include "{}Wi\+Fi\+Manager.\+h"{}}\newline
+{\ttfamily \#include "{}potentiometer.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8ino_acd939b64a048d6ed459be654090a838a}{FIREBASE\+\_\+\+HOST}}~"{}https\+://\mbox{\hyperlink{password__manager_8ino_acbd76b816d055b7a642c219fd9751020}{password}}-\/entries-\/default-\/rtdb.\+europe-\/west1.\+firebasedatabase.\+app/"{}
+\begin{DoxyCompactList}\small\item\em Firebase database URL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{main_8ino_a7a689f00c928d30a9e6b9c294e8148c1}{FIREBASE\+\_\+\+AUTH}}~"{}7i\+TOn3\+J10\+Ob0m\+CVn\+Ut\+G8d\+QY4\+Qmyc6k\+TBi926\+A6xa"{}
+\begin{DoxyCompactList}\small\item\em Firebase Auth key. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{main_8ino_a7c3170c26456d31621c93f0c6bfc5fa6}{reset\+System}} ()
+\begin{DoxyCompactList}\small\item\em Resets the system state and clears selected numbers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8ino_a7bea7c1d7f7a9d76e7c8fd383c1decff}{check\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Checks the entered code against the correct code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8ino_a4eb9b74023d402af58366ad5ad39166d}{update\+Correct\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Updates the correct code by retrieving it from Firebase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8ino_ac14baada25fcf37c32a9a509436290d5}{check\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Checks Wi\+Fi connection and attempts to reconnect if lost. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Main arduino setup function responsible for initializing objects, pins, and hardware components. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8ino_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Main arduino loop function. This runs constantly and allows for user interaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a587ba0cb07f02913598610049a3bbb79}{ssid}} = "{}Melek"{}
+\begin{DoxyCompactList}\small\item\em Wi-\/\+Fi SSID. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a3bef28806edf8f4c8cb82584b7e8c3cb}{pass}} = "{}melekdeling"{}
+\begin{DoxyCompactList}\small\item\em Wi-\/\+Fi password. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_wi_fi_manager}{Wi\+Fi\+Manager}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a89c51929c72f18fd2437f857d4fba94e}{wifi\+Manager}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_wi_fi_manager}{Wi\+Fi\+Manager} object for handling the Wi-\/\+Fi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_firebase_handler}{Firebase\+Handler}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a0e263faaf1f060856aa9d40a59ff6699}{firebase}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_firebase_handler}{Firebase\+Handler} object for Firebase operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_ab203b504762cfa71d6b2135830018fdb}{lcd}}
+\begin{DoxyCompactList}\small\item\em LCD screen object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_buzzer}{Buzzer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a93f76f31c72aa926d2f7b28396056aaa}{buzzer}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_buzzer}{Buzzer} object for sound notifications. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_l_e_ds}{LEDs}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{main_8ino_a0e05d17205a66ab1ae96282b03141b95}{leds}}
+\begin{DoxyCompactList}\small\item\em \doxylink{class_l_e_ds}{LEDs} object for controlling the \doxylink{class_l_e_ds}{LEDs}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}} = \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8afd6a0e4343048b10646dd2976cc5ad18}{IDLE}}
+\begin{DoxyCompactList}\small\item\em System state enum. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a0a59094bfd2721b201753dcc4aa5a7e0}{pot\+Pin}} = A0
+\begin{DoxyCompactList}\small\item\em Potentiometer input pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}{button\+Pin}} = 16
+\begin{DoxyCompactList}\small\item\em Button input pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a988a608b186de34e793324aee3ec73ee}{buzzer\+Pin}} = 15
+\begin{DoxyCompactList}\small\item\em \doxylink{class_buzzer}{Buzzer} output pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a12e0822e230092cca844cd048a9d6cd6}{green\+LEDPin}} = 14
+\begin{DoxyCompactList}\small\item\em Green LED output pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a50c39ef3bde8de33d86422b2796af548}{yellow\+LEDPin}} = 12
+\begin{DoxyCompactList}\small\item\em Yellow LED output pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a2a37a0731c2f8691dd9e3abf460fd1f9}{red\+LEDPin}} = 13
+\begin{DoxyCompactList}\small\item\em Red LED output pin. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_a4160bb437c685a28cde6b624c2cc49dd}{servo\+Motor\+Pin}} = 2
+\begin{DoxyCompactList}\small\item\em Servo motor control pin. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}{box\+ID}} = "{}004"{}
+\begin{DoxyCompactList}\small\item\em BOX ID for Firebase. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8ino_ad58c9e5ec6f1cc44e98f9e4279ad84bc}{selected\+Numbers}} \mbox{[}4\mbox{]} = \{ -\/1, -\/1, -\/1, -\/1 \}
+\begin{DoxyCompactList}\small\item\em Array storing user input numbers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8ino_aa21fa1997fedbd21fafc49cb97b2c000}{code\+Index}} = 0
+\begin{DoxyCompactList}\small\item\em Tracks which digit the user is selecting. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8ino_a176560937694baccc8a92ab840fafac1}{attempts\+Used}} = 0
+\begin{DoxyCompactList}\small\item\em Tracks the number of failed attempts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8ino_a768ceffd92a156c2829e4af4d63260ad}{selected\+Number}} = 0
+\begin{DoxyCompactList}\small\item\em Current selected number from the potentiometer. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{main_8ino_acfa9c9efda64a4e435069767b5831eb7}{max\+Attempts}} = 3
+\begin{DoxyCompactList}\small\item\em Maximum allowed password attempts before access is denied. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{main_8ino_ab7963092e6404e991860b9f0cd7b0f38}{first\+Reading}} = true
+\begin{DoxyCompactList}\small\item\em Flag to indicate if it is the first user input reading. Is used to ensure IDLE mode upon program start. \end{DoxyCompactList}\item 
+unsigned long \mbox{\hyperlink{main_8ino_aca6c3b0edf5cd2083b653e4b45b5be5f}{last\+Interaction\+Time}} = 0
+\begin{DoxyCompactList}\small\item\em Timestamp of the last interaction. \end{DoxyCompactList}\item 
+const unsigned long \mbox{\hyperlink{main_8ino_a13c36040fb5a8e7537db9eb933e919b5}{timeout\+Duration}} = 60000
+\begin{DoxyCompactList}\small\item\em Timeout duration for inactivity. \end{DoxyCompactList}\item 
+const unsigned long \mbox{\hyperlink{main_8ino_a54e166222c3a796c071c800f76470384}{reset\+Duration}} = 1800000
+\begin{DoxyCompactList}\small\item\em Duration after which the system resets due to inactivity (and resets attempt count). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8ino_a29b4551c4ed4171013bea56580274082}{correct\+Code}} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Is there to contain the correct password. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{main_8ino_a7a689f00c928d30a9e6b9c294e8148c1}\index{main.ino@{main.ino}!FIREBASE\_AUTH@{FIREBASE\_AUTH}}
+\index{FIREBASE\_AUTH@{FIREBASE\_AUTH}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{FIREBASE\_AUTH}{FIREBASE\_AUTH}}
+{\footnotesize\ttfamily \label{main_8ino_a7a689f00c928d30a9e6b9c294e8148c1} 
+\#define FIREBASE\+\_\+\+AUTH~"{}7i\+TOn3\+J10\+Ob0m\+CVn\+Ut\+G8d\+QY4\+Qmyc6k\+TBi926\+A6xa"{}}
+
+
+
+Firebase Auth key. 
+
+\Hypertarget{main_8ino_acd939b64a048d6ed459be654090a838a}\index{main.ino@{main.ino}!FIREBASE\_HOST@{FIREBASE\_HOST}}
+\index{FIREBASE\_HOST@{FIREBASE\_HOST}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{FIREBASE\_HOST}{FIREBASE\_HOST}}
+{\footnotesize\ttfamily \label{main_8ino_acd939b64a048d6ed459be654090a838a} 
+\#define FIREBASE\+\_\+\+HOST~"{}https\+://\mbox{\hyperlink{password__manager_8ino_acbd76b816d055b7a642c219fd9751020}{password}}-\/entries-\/default-\/rtdb.\+europe-\/west1.\+firebasedatabase.\+app/"{}}
+
+
+
+Firebase database URL. 
+
 
 
 \doxysubsection{Function Documentation}
+\Hypertarget{main_8ino_a7bea7c1d7f7a9d76e7c8fd383c1decff}\index{main.ino@{main.ino}!checkCode@{checkCode}}
+\index{checkCode@{checkCode}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{checkCode()}{checkCode()}}
+{\footnotesize\ttfamily \label{main_8ino_a7bea7c1d7f7a9d76e7c8fd383c1decff} 
+void check\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks the entered code against the correct code. 
+
+\Hypertarget{main_8ino_ac14baada25fcf37c32a9a509436290d5}\index{main.ino@{main.ino}!checkConnection@{checkConnection}}
+\index{checkConnection@{checkConnection}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{checkConnection()}{checkConnection()}}
+{\footnotesize\ttfamily \label{main_8ino_ac14baada25fcf37c32a9a509436290d5} 
+void check\+Connection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks Wi\+Fi connection and attempts to reconnect if lost. 
+
 \Hypertarget{main_8ino_afe461d27b9c48d5921c00d521181f12f}\index{main.ino@{main.ino}!loop@{loop}}
 \index{loop@{loop}!main.ino@{main.ino}}
 \doxysubsubsection{\texorpdfstring{loop()}{loop()}}
 {\footnotesize\ttfamily \label{main_8ino_afe461d27b9c48d5921c00d521181f12f} 
 void loop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
+
+
+Main arduino loop function. This runs constantly and allows for user interaction. 
+
+\Hypertarget{main_8ino_a7c3170c26456d31621c93f0c6bfc5fa6}\index{main.ino@{main.ino}!resetSystem@{resetSystem}}
+\index{resetSystem@{resetSystem}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{resetSystem()}{resetSystem()}}
+{\footnotesize\ttfamily \label{main_8ino_a7c3170c26456d31621c93f0c6bfc5fa6} 
+void reset\+System (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the system state and clears selected numbers. 
+
 \Hypertarget{main_8ino_a4fc01d736fe50cf5b977f755b675f11d}\index{main.ino@{main.ino}!setup@{setup}}
 \index{setup@{setup}!main.ino@{main.ino}}
 \doxysubsubsection{\texorpdfstring{setup()}{setup()}}
 {\footnotesize\ttfamily \label{main_8ino_a4fc01d736fe50cf5b977f755b675f11d} 
 void setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main arduino setup function responsible for initializing objects, pins, and hardware components. 
+
+\Hypertarget{main_8ino_a4eb9b74023d402af58366ad5ad39166d}\index{main.ino@{main.ino}!updateCorrectCode@{updateCorrectCode}}
+\index{updateCorrectCode@{updateCorrectCode}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{updateCorrectCode()}{updateCorrectCode()}}
+{\footnotesize\ttfamily \label{main_8ino_a4eb9b74023d402af58366ad5ad39166d} 
+void update\+Correct\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the correct code by retrieving it from Firebase. 
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8ino_a176560937694baccc8a92ab840fafac1}\index{main.ino@{main.ino}!attemptsUsed@{attemptsUsed}}
+\index{attemptsUsed@{attemptsUsed}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{attemptsUsed}{attemptsUsed}}
+{\footnotesize\ttfamily \label{main_8ino_a176560937694baccc8a92ab840fafac1} 
+int attempts\+Used = 0}
+
+
+
+Tracks the number of failed attempts. 
+
+\Hypertarget{main_8ino_a32ece16c872ffd44bb017caf3f7274d0}\index{main.ino@{main.ino}!boxID@{boxID}}
+\index{boxID@{boxID}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{boxID}{boxID}}
+{\footnotesize\ttfamily \label{main_8ino_a32ece16c872ffd44bb017caf3f7274d0} 
+String box\+ID = "{}004"{}}
+
+
+
+BOX ID for Firebase. 
+
+\Hypertarget{main_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e}\index{main.ino@{main.ino}!buttonPin@{buttonPin}}
+\index{buttonPin@{buttonPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{buttonPin}{buttonPin}}
+{\footnotesize\ttfamily \label{main_8ino_a4ddb8b6ae564eb22f7c74f2683a63b8e} 
+const int button\+Pin = 16}
+
+
+
+Button input pin. 
+
+\Hypertarget{main_8ino_a93f76f31c72aa926d2f7b28396056aaa}\index{main.ino@{main.ino}!buzzer@{buzzer}}
+\index{buzzer@{buzzer}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{buzzer}{buzzer}}
+{\footnotesize\ttfamily \label{main_8ino_a93f76f31c72aa926d2f7b28396056aaa} 
+\mbox{\hyperlink{class_buzzer}{Buzzer}}\texorpdfstring{$\ast$}{*} buzzer}
+
+
+
+\doxylink{class_buzzer}{Buzzer} object for sound notifications. 
+
+\Hypertarget{main_8ino_a988a608b186de34e793324aee3ec73ee}\index{main.ino@{main.ino}!buzzerPin@{buzzerPin}}
+\index{buzzerPin@{buzzerPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{buzzerPin}{buzzerPin}}
+{\footnotesize\ttfamily \label{main_8ino_a988a608b186de34e793324aee3ec73ee} 
+const int buzzer\+Pin = 15}
+
+
+
+\doxylink{class_buzzer}{Buzzer} output pin. 
+
+\Hypertarget{main_8ino_aa21fa1997fedbd21fafc49cb97b2c000}\index{main.ino@{main.ino}!codeIndex@{codeIndex}}
+\index{codeIndex@{codeIndex}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{codeIndex}{codeIndex}}
+{\footnotesize\ttfamily \label{main_8ino_aa21fa1997fedbd21fafc49cb97b2c000} 
+int code\+Index = 0}
+
+
+
+Tracks which digit the user is selecting. 
+
+\Hypertarget{main_8ino_a29b4551c4ed4171013bea56580274082}\index{main.ino@{main.ino}!correctCode@{correctCode}}
+\index{correctCode@{correctCode}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{correctCode}{correctCode}}
+{\footnotesize\ttfamily \label{main_8ino_a29b4551c4ed4171013bea56580274082} 
+int correct\+Code\mbox{[}4\mbox{]}}
+
+
+
+Is there to contain the correct password. 
+
+\Hypertarget{main_8ino_a0e263faaf1f060856aa9d40a59ff6699}\index{main.ino@{main.ino}!firebase@{firebase}}
+\index{firebase@{firebase}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{firebase}{firebase}}
+{\footnotesize\ttfamily \label{main_8ino_a0e263faaf1f060856aa9d40a59ff6699} 
+\mbox{\hyperlink{class_firebase_handler}{Firebase\+Handler}}\texorpdfstring{$\ast$}{*} firebase}
+
+
+
+\doxylink{class_firebase_handler}{Firebase\+Handler} object for Firebase operations. 
+
+\Hypertarget{main_8ino_ab7963092e6404e991860b9f0cd7b0f38}\index{main.ino@{main.ino}!firstReading@{firstReading}}
+\index{firstReading@{firstReading}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{firstReading}{firstReading}}
+{\footnotesize\ttfamily \label{main_8ino_ab7963092e6404e991860b9f0cd7b0f38} 
+bool first\+Reading = true}
+
+
+
+Flag to indicate if it is the first user input reading. Is used to ensure IDLE mode upon program start. 
+
+\Hypertarget{main_8ino_a12e0822e230092cca844cd048a9d6cd6}\index{main.ino@{main.ino}!greenLEDPin@{greenLEDPin}}
+\index{greenLEDPin@{greenLEDPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{greenLEDPin}{greenLEDPin}}
+{\footnotesize\ttfamily \label{main_8ino_a12e0822e230092cca844cd048a9d6cd6} 
+const int green\+LEDPin = 14}
+
+
+
+Green LED output pin. 
+
+\Hypertarget{main_8ino_aca6c3b0edf5cd2083b653e4b45b5be5f}\index{main.ino@{main.ino}!lastInteractionTime@{lastInteractionTime}}
+\index{lastInteractionTime@{lastInteractionTime}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{lastInteractionTime}{lastInteractionTime}}
+{\footnotesize\ttfamily \label{main_8ino_aca6c3b0edf5cd2083b653e4b45b5be5f} 
+unsigned long last\+Interaction\+Time = 0}
+
+
+
+Timestamp of the last interaction. 
+
+\Hypertarget{main_8ino_ab203b504762cfa71d6b2135830018fdb}\index{main.ino@{main.ino}!lcd@{lcd}}
+\index{lcd@{lcd}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{lcd}{lcd}}
+{\footnotesize\ttfamily \label{main_8ino_ab203b504762cfa71d6b2135830018fdb} 
+\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}}\texorpdfstring{$\ast$}{*} lcd}
+
+
+
+LCD screen object. 
+
+\Hypertarget{main_8ino_a0e05d17205a66ab1ae96282b03141b95}\index{main.ino@{main.ino}!leds@{leds}}
+\index{leds@{leds}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{leds}{leds}}
+{\footnotesize\ttfamily \label{main_8ino_a0e05d17205a66ab1ae96282b03141b95} 
+\mbox{\hyperlink{class_l_e_ds}{LEDs}}\texorpdfstring{$\ast$}{*} leds}
+
+
+
+\doxylink{class_l_e_ds}{LEDs} object for controlling the \doxylink{class_l_e_ds}{LEDs}. 
+
+\Hypertarget{main_8ino_acfa9c9efda64a4e435069767b5831eb7}\index{main.ino@{main.ino}!maxAttempts@{maxAttempts}}
+\index{maxAttempts@{maxAttempts}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{maxAttempts}{maxAttempts}}
+{\footnotesize\ttfamily \label{main_8ino_acfa9c9efda64a4e435069767b5831eb7} 
+const int max\+Attempts = 3}
+
+
+
+Maximum allowed password attempts before access is denied. 
+
+\Hypertarget{main_8ino_a3bef28806edf8f4c8cb82584b7e8c3cb}\index{main.ino@{main.ino}!pass@{pass}}
+\index{pass@{pass}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{pass}{pass}}
+{\footnotesize\ttfamily \label{main_8ino_a3bef28806edf8f4c8cb82584b7e8c3cb} 
+const char\texorpdfstring{$\ast$}{*} pass = "{}melekdeling"{}}
+
+
+
+Wi-\/\+Fi password. 
+
+\Hypertarget{main_8ino_a0a59094bfd2721b201753dcc4aa5a7e0}\index{main.ino@{main.ino}!potPin@{potPin}}
+\index{potPin@{potPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{potPin}{potPin}}
+{\footnotesize\ttfamily \label{main_8ino_a0a59094bfd2721b201753dcc4aa5a7e0} 
+const int pot\+Pin = A0}
+
+
+
+Potentiometer input pin. 
+
+\Hypertarget{main_8ino_a2a37a0731c2f8691dd9e3abf460fd1f9}\index{main.ino@{main.ino}!redLEDPin@{redLEDPin}}
+\index{redLEDPin@{redLEDPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{redLEDPin}{redLEDPin}}
+{\footnotesize\ttfamily \label{main_8ino_a2a37a0731c2f8691dd9e3abf460fd1f9} 
+const int red\+LEDPin = 13}
+
+
+
+Red LED output pin. 
+
+\Hypertarget{main_8ino_a54e166222c3a796c071c800f76470384}\index{main.ino@{main.ino}!resetDuration@{resetDuration}}
+\index{resetDuration@{resetDuration}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{resetDuration}{resetDuration}}
+{\footnotesize\ttfamily \label{main_8ino_a54e166222c3a796c071c800f76470384} 
+const unsigned long reset\+Duration = 1800000}
+
+
+
+Duration after which the system resets due to inactivity (and resets attempt count). 
+
+\Hypertarget{main_8ino_a768ceffd92a156c2829e4af4d63260ad}\index{main.ino@{main.ino}!selectedNumber@{selectedNumber}}
+\index{selectedNumber@{selectedNumber}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{selectedNumber}{selectedNumber}}
+{\footnotesize\ttfamily \label{main_8ino_a768ceffd92a156c2829e4af4d63260ad} 
+int selected\+Number = 0}
+
+
+
+Current selected number from the potentiometer. 
+
+\Hypertarget{main_8ino_ad58c9e5ec6f1cc44e98f9e4279ad84bc}\index{main.ino@{main.ino}!selectedNumbers@{selectedNumbers}}
+\index{selectedNumbers@{selectedNumbers}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{selectedNumbers}{selectedNumbers}}
+{\footnotesize\ttfamily \label{main_8ino_ad58c9e5ec6f1cc44e98f9e4279ad84bc} 
+int selected\+Numbers\mbox{[}4\mbox{]} = \{ -\/1, -\/1, -\/1, -\/1 \}}
+
+
+
+Array storing user input numbers. 
+
+\Hypertarget{main_8ino_a4160bb437c685a28cde6b624c2cc49dd}\index{main.ino@{main.ino}!servoMotorPin@{servoMotorPin}}
+\index{servoMotorPin@{servoMotorPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{servoMotorPin}{servoMotorPin}}
+{\footnotesize\ttfamily \label{main_8ino_a4160bb437c685a28cde6b624c2cc49dd} 
+const int servo\+Motor\+Pin = 2}
+
+
+
+Servo motor control pin. 
+
+\Hypertarget{main_8ino_a587ba0cb07f02913598610049a3bbb79}\index{main.ino@{main.ino}!ssid@{ssid}}
+\index{ssid@{ssid}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily \label{main_8ino_a587ba0cb07f02913598610049a3bbb79} 
+const char\texorpdfstring{$\ast$}{*} ssid = "{}Melek"{}}
+
+
+
+Wi-\/\+Fi SSID. 
+
+\Hypertarget{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}\index{main.ino@{main.ino}!state@{state}}
+\index{state@{state}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \label{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee} 
+enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} state = \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8afd6a0e4343048b10646dd2976cc5ad18}{IDLE}}}
+
+
+
+System state enum. 
+
+\Hypertarget{main_8ino_a13c36040fb5a8e7537db9eb933e919b5}\index{main.ino@{main.ino}!timeoutDuration@{timeoutDuration}}
+\index{timeoutDuration@{timeoutDuration}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{timeoutDuration}{timeoutDuration}}
+{\footnotesize\ttfamily \label{main_8ino_a13c36040fb5a8e7537db9eb933e919b5} 
+const unsigned long timeout\+Duration = 60000}
+
+
+
+Timeout duration for inactivity. 
+
+\Hypertarget{main_8ino_a89c51929c72f18fd2437f857d4fba94e}\index{main.ino@{main.ino}!wifiManager@{wifiManager}}
+\index{wifiManager@{wifiManager}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{wifiManager}{wifiManager}}
+{\footnotesize\ttfamily \label{main_8ino_a89c51929c72f18fd2437f857d4fba94e} 
+\mbox{\hyperlink{class_wi_fi_manager}{Wi\+Fi\+Manager}}\texorpdfstring{$\ast$}{*} wifi\+Manager}
+
+
+
+\doxylink{class_wi_fi_manager}{Wi\+Fi\+Manager} object for handling the Wi-\/\+Fi connection. 
+
+\Hypertarget{main_8ino_a50c39ef3bde8de33d86422b2796af548}\index{main.ino@{main.ino}!yellowLEDPin@{yellowLEDPin}}
+\index{yellowLEDPin@{yellowLEDPin}!main.ino@{main.ino}}
+\doxysubsubsection{\texorpdfstring{yellowLEDPin}{yellowLEDPin}}
+{\footnotesize\ttfamily \label{main_8ino_a50c39ef3bde8de33d86422b2796af548} 
+const int yellow\+LEDPin = 12}
+
+
+
+Yellow LED output pin. 
 

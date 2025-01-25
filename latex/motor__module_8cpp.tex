@@ -1,20 +1,30 @@
 \doxysection{main/motor\+\_\+module.cpp File Reference}
 \hypertarget{motor__module_8cpp}{}\label{motor__module_8cpp}\index{main/motor\_module.cpp@{main/motor\_module.cpp}}
+
+
+Implementation of motor control functions for locking and unlocking mechanisms.  
+
+
 {\ttfamily \#include "{}motor\+\_\+module.\+h"{}}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{motor__module_8cpp_aa8725e915ced77861b8bc752067b2231}{setup\+Motor}} (int pin)
-\item 
+\begin{DoxyCompactList}\small\item\em Initializes the motor by attaching it to the specified pin and setting its initial position. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{motor__module_8cpp_a673bf0a34ca967c35afdda34d7317898}{set\+Lock}} (bool access\+Granted)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sets the lock state of the motor based on the access\+Granted status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 Servo \mbox{\hyperlink{motor__module_8cpp_a79efceea669fb85a732c30f47cf7e59c}{servo}}
-\item 
+\begin{DoxyCompactList}\small\item\em Servo object to control the motor. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{motor__module_8cpp_a63177970cacb40efba67ce501ea89210}{angle}} = 0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Initial angle of the servo motor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of motor control functions for locking and unlocking mechanisms. 
+
 
 
 \doxysubsection{Function Documentation}
@@ -24,12 +34,36 @@ int \mbox{\hyperlink{motor__module_8cpp_a63177970cacb40efba67ce501ea89210}{angle
 {\footnotesize\ttfamily \label{motor__module_8cpp_a673bf0a34ca967c35afdda34d7317898} 
 void set\+Lock (\begin{DoxyParamCaption}\item[{bool}]{access\+Granted}{}\end{DoxyParamCaption})}
 
-\Hypertarget{motor__module_8cpp_aa8725e915ced77861b8bc752067b2231}\index{motor\_module.cpp@{motor\_module.cpp}!setupMotor@{setupMotor}}
+
+
+Sets the lock state of the motor based on the access\+Granted status. 
+
+Controls the lock state of the motor based on access status.
+
+
+\begin{DoxyParams}{Parameters}
+{\em access\+Granted} & A boolean value indicating whether access is granted (true to unlock, false to lock). \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Unlock position (angle 170 degrees).
+
+\texorpdfstring{$<$}{<} Lock position (angle 0 degrees).\Hypertarget{motor__module_8cpp_aa8725e915ced77861b8bc752067b2231}\index{motor\_module.cpp@{motor\_module.cpp}!setupMotor@{setupMotor}}
 \index{setupMotor@{setupMotor}!motor\_module.cpp@{motor\_module.cpp}}
 \doxysubsubsection{\texorpdfstring{setupMotor()}{setupMotor()}}
 {\footnotesize\ttfamily \label{motor__module_8cpp_aa8725e915ced77861b8bc752067b2231} 
 void setup\+Motor (\begin{DoxyParamCaption}\item[{int}]{pin}{}\end{DoxyParamCaption})}
 
+
+
+Initializes the motor by attaching it to the specified pin and setting its initial position. 
+
+\texorpdfstring{$<$}{<} Library for controlling servo motors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pin} & The GPIO pin to which the servo motor is connected. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Variable Documentation}
@@ -39,9 +73,17 @@ void setup\+Motor (\begin{DoxyParamCaption}\item[{int}]{pin}{}\end{DoxyParamCapt
 {\footnotesize\ttfamily \label{motor__module_8cpp_a63177970cacb40efba67ce501ea89210} 
 int angle = 0}
 
+
+
+Initial angle of the servo motor. 
+
 \Hypertarget{motor__module_8cpp_a79efceea669fb85a732c30f47cf7e59c}\index{motor\_module.cpp@{motor\_module.cpp}!servo@{servo}}
 \index{servo@{servo}!motor\_module.cpp@{motor\_module.cpp}}
 \doxysubsubsection{\texorpdfstring{servo}{servo}}
 {\footnotesize\ttfamily \label{motor__module_8cpp_a79efceea669fb85a732c30f47cf7e59c} 
 Servo servo}
+
+
+
+Servo object to control the motor. 
 

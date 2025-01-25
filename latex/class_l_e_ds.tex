@@ -1,0 +1,129 @@
+\doxysection{LEDs Class Reference}
+\hypertarget{class_l_e_ds}{}\label{class_l_e_ds}\index{LEDs@{LEDs}}
+
+
+A class to manage and update the state of \doxylink{class_l_e_ds}{LEDs} based on the given state.  
+
+
+
+
+{\ttfamily \#include $<$LEDs.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_l_e_ds_ab58a1659b3434f530fb99eba38722903}{LEDs}} (int \mbox{\hyperlink{class_l_e_ds_a7449578ce7cec34f023739e64db0969b}{green\+PIN}}, int \mbox{\hyperlink{class_l_e_ds_a80c7d02740041022554111b22d575f4d}{yellow\+PIN}}, int \mbox{\hyperlink{class_l_e_ds_a799817b46dcf18395b9d976ae7807fe6}{red\+PIN}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_l_e_ds}{LEDs} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_l_e_ds_a4a194175ba8c5be482208c3b263119aa}{update}} (enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}})
+\begin{DoxyCompactList}\small\item\em Updates the \doxylink{class_l_e_ds}{LEDs} based on the provided state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_l_e_ds_a7449578ce7cec34f023739e64db0969b}{green\+PIN}}
+\begin{DoxyCompactList}\small\item\em The pin number for the green LED. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_l_e_ds_a80c7d02740041022554111b22d575f4d}{yellow\+PIN}}
+\begin{DoxyCompactList}\small\item\em The pin number for the yellow LED. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_l_e_ds_a799817b46dcf18395b9d976ae7807fe6}{red\+PIN}}
+\begin{DoxyCompactList}\small\item\em The pin number for the red LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class to manage and update the state of \doxylink{class_l_e_ds}{LEDs} based on the given state. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_l_e_ds_ab58a1659b3434f530fb99eba38722903}\index{LEDs@{LEDs}!LEDs@{LEDs}}
+\index{LEDs@{LEDs}!LEDs@{LEDs}}
+\doxysubsubsection{\texorpdfstring{LEDs()}{LEDs()}}
+{\footnotesize\ttfamily \label{class_l_e_ds_ab58a1659b3434f530fb99eba38722903} 
+LEDs\+::\+LEDs (\begin{DoxyParamCaption}\item[{int}]{green\+PIN}{, }\item[{int}]{yellow\+PIN}{, }\item[{int}]{red\+PIN}{}\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_l_e_ds}{LEDs} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em green\+PIN} & The pin number connected to the green LED. \\
+\hline
+{\em yellow\+PIN} & The pin number connected to the yellow LED. \\
+\hline
+{\em red\+PIN} & The pin number connected to the red LED.\\
+\hline
+\end{DoxyParams}
+Initializes the LED pins and sets them as outputs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em green\+PIN} & The pin number connected to the green LED. \\
+\hline
+{\em yellow\+PIN} & The pin number connected to the yellow LED. \\
+\hline
+{\em red\+PIN} & The pin number connected to the red LED. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_e_ds_a4a194175ba8c5be482208c3b263119aa}\index{LEDs@{LEDs}!update@{update}}
+\index{update@{update}!LEDs@{LEDs}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily \label{class_l_e_ds_a4a194175ba8c5be482208c3b263119aa} 
+void LEDs\+::update (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Updates the \doxylink{class_l_e_ds}{LEDs} based on the provided state. 
+
+Updates the \doxylink{class_l_e_ds}{LEDs} based on the provided system state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current state of the system, determining the LED configuration.\\
+\hline
+\end{DoxyParams}
+Sets the state of the \doxylink{class_l_e_ds}{LEDs} to indicate the current system state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & The current state of the system, which determines the LED behavior. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_l_e_ds_a7449578ce7cec34f023739e64db0969b}\index{LEDs@{LEDs}!greenPIN@{greenPIN}}
+\index{greenPIN@{greenPIN}!LEDs@{LEDs}}
+\doxysubsubsection{\texorpdfstring{greenPIN}{greenPIN}}
+{\footnotesize\ttfamily \label{class_l_e_ds_a7449578ce7cec34f023739e64db0969b} 
+int LEDs\+::green\+PIN}
+
+
+
+The pin number for the green LED. 
+
+\Hypertarget{class_l_e_ds_a799817b46dcf18395b9d976ae7807fe6}\index{LEDs@{LEDs}!redPIN@{redPIN}}
+\index{redPIN@{redPIN}!LEDs@{LEDs}}
+\doxysubsubsection{\texorpdfstring{redPIN}{redPIN}}
+{\footnotesize\ttfamily \label{class_l_e_ds_a799817b46dcf18395b9d976ae7807fe6} 
+int LEDs\+::red\+PIN}
+
+
+
+The pin number for the red LED. 
+
+\Hypertarget{class_l_e_ds_a80c7d02740041022554111b22d575f4d}\index{LEDs@{LEDs}!yellowPIN@{yellowPIN}}
+\index{yellowPIN@{yellowPIN}!LEDs@{LEDs}}
+\doxysubsubsection{\texorpdfstring{yellowPIN}{yellowPIN}}
+{\footnotesize\ttfamily \label{class_l_e_ds_a80c7d02740041022554111b22d575f4d} 
+int LEDs\+::yellow\+PIN}
+
+
+
+The pin number for the yellow LED. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+main/\mbox{\hyperlink{_l_e_ds_8h}{LEDs.\+h}}\item 
+main/\mbox{\hyperlink{_l_e_ds_8cpp}{LEDs.\+cpp}}\end{DoxyCompactItemize}

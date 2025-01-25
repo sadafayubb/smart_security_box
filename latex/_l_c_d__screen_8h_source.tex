@@ -1,0 +1,40 @@
+\doxysection{LCD\+\_\+screen.\+h}
+\hypertarget{_l_c_d__screen_8h_source}{}\label{_l_c_d__screen_8h_source}\index{main/LCD\_screen.h@{main/LCD\_screen.h}}
+\mbox{\hyperlink{_l_c_d__screen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#ifndef\ LCD\_SCREEN\_H}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ LCD\_SCREEN\_H}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <Wire.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <LiquidCrystal\_I2C.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{constants_8h}{constants.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ String\ \mbox{\hyperlink{_l_c_d__screen_8h_a62b5ba1ffbb134e0466e03fb92cbb9fa}{\_codeToString}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ code[]);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_l_c_d_screen_a81b8f49be0d69fb8df8b05f8a1c32d0d}{LCDScreen}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_l_c_d_screen_a81b8f49be0d69fb8df8b05f8a1c32d0d}{LCDScreen}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_c_d_screen_abbb719ee21a71603f2dfbc8acd42df3d}{printLine}}(String\ str,\ \textcolor{keywordtype}{int}\ lineNumber);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_c_d_screen_a6383d7fcd6cb98e6a47c9380dc08ba95}{printLines}}(String\ str1,\ String\ str2);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_l_c_d_screen_a94e5a3597c98e25845ab43dfac47383e}{clear}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ LiquidCrystal\_I2C\ \mbox{\hyperlink{class_l_c_d_screen_a5d23ff89340021f51cde9fac326f9996}{lcd}}\ =\ LiquidCrystal\_I2C(0x27,\ 16,\ 2);}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_l_c_d__screen_8h_a570c0a382f99af15bc82ded81e3ae271}{updateBoxLCD}}(\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}}*\ \mbox{\hyperlink{main_8ino_ab203b504762cfa71d6b2135830018fdb}{lcd}},\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}\ \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}},\ \textcolor{keywordtype}{int}\ code[],\ \textcolor{keywordtype}{int}\ currentDigit);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LCD\_SCREEN\_H}}
+
+\end{DoxyCode}

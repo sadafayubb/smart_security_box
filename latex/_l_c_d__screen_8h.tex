@@ -1,0 +1,61 @@
+\doxysection{main/\+LCD\+\_\+screen.h File Reference}
+\hypertarget{_l_c_d__screen_8h}{}\label{_l_c_d__screen_8h}\index{main/LCD\_screen.h@{main/LCD\_screen.h}}
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Liquid\+Crystal\+\_\+\+I2\+C.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}constants.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}}
+\begin{DoxyCompactList}\small\item\em Handles the LCD display for the Smart Security Box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \mbox{\hyperlink{_l_c_d__screen_8h_a62b5ba1ffbb134e0466e03fb92cbb9fa}{\+\_\+code\+To\+String}} (const int code\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Converts the code array into a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_l_c_d__screen_8h_a570c0a382f99af15bc82ded81e3ae271}{update\+Box\+LCD}} (\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{main_8ino_ab203b504762cfa71d6b2135830018fdb}{lcd}}, enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \mbox{\hyperlink{main_8ino_a0db44bec6a2ebf1a0cc819b5c9191cee}{state}}, int code\mbox{[}$\,$\mbox{]}, int current\+Digit)
+\begin{DoxyCompactList}\small\item\em Updates the LCD screen based on the current state and inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_l_c_d__screen_8h_a62b5ba1ffbb134e0466e03fb92cbb9fa}\index{LCD\_screen.h@{LCD\_screen.h}!\_codeToString@{\_codeToString}}
+\index{\_codeToString@{\_codeToString}!LCD\_screen.h@{LCD\_screen.h}}
+\doxysubsubsection{\texorpdfstring{\_codeToString()}{\_codeToString()}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8h_a62b5ba1ffbb134e0466e03fb92cbb9fa} 
+String \+\_\+code\+To\+String (\begin{DoxyParamCaption}\item[{const int}]{code}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Converts the code array into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The integer array representing the code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The code as a string. 
+\end{DoxyReturn}
+\Hypertarget{_l_c_d__screen_8h_a570c0a382f99af15bc82ded81e3ae271}\index{LCD\_screen.h@{LCD\_screen.h}!updateBoxLCD@{updateBoxLCD}}
+\index{updateBoxLCD@{updateBoxLCD}!LCD\_screen.h@{LCD\_screen.h}}
+\doxysubsubsection{\texorpdfstring{updateBoxLCD()}{updateBoxLCD()}}
+{\footnotesize\ttfamily \label{_l_c_d__screen_8h_a570c0a382f99af15bc82ded81e3ae271} 
+void update\+Box\+LCD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_l_c_d_screen}{LCDScreen}} \texorpdfstring{$\ast$}{*}}]{lcd}{, }\item[{enum \mbox{\hyperlink{constants_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}]{state}{, }\item[{int}]{code}{\mbox{[}$\,$\mbox{]}, }\item[{int}]{current\+Digit}{}\end{DoxyParamCaption})}
+
+
+
+Updates the LCD screen based on the current state and inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lcd} & The Liquid\+Crystal\+\_\+\+I2C object controlling the display. \\
+\hline
+{\em state} & The current state of the system. \\
+\hline
+{\em code} & The code being entered or displayed. \\
+\hline
+{\em current\+Digit} & The current digit being modified. \\
+\hline
+\end{DoxyParams}
